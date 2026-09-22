@@ -18,7 +18,7 @@ export const MainLayout = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-50 flex overflow-hidden">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex overflow-hidden transition-colors">
       {/* Sidebar Navigation */}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 

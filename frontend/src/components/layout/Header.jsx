@@ -1,12 +1,14 @@
 import React from 'react';
-import { Menu, Warehouse, Shield, Bell } from 'lucide-react';
+import { Menu, Warehouse, Shield, Bell, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { useTheme } from '../../context/ThemeContext';
 
 export const Header = ({ onOpenSidebar, isSidebarOpen }) => {
   const { user } = useAuth();
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="sticky top-0 z-30 h-16 py-2 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm px-4 sm:px-6 flex items-center justify-between transition-all">
+    <header className="sticky top-0 z-30 h-16 py-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm px-4 sm:px-6 flex items-center justify-between transition-all">
       {/* Mobile Menu & Title */}
       <div className="flex items-center gap-4">
         {!isSidebarOpen && (
@@ -19,31 +21,39 @@ export const Header = ({ onOpenSidebar, isSidebarOpen }) => {
           </button>
         )}
         
-        <div className={`hidden sm:flex items-center gap-3 ${!isSidebarOpen ? 'pl-4 border-l border-slate-200' : ''}`}>
-          <div className="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600">
+        <div className={`hidden sm:flex items-center gap-3 ${!isSidebarOpen ? 'pl-4 border-l border-slate-200 dark:border-slate-800' : ''}`}>
+          <div className="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
             <Warehouse className="w-4 h-4" />
           </div>
           <div>
-            <h2 className="text-sm font-bold text-slate-900 leading-tight">StockFlow Workspace</h2>
-            <p className="text-[10px] uppercase font-semibold text-slate-500 tracking-wider">Multi-Warehouse Inventory</p>
+            <h2 className="text-sm font-bold text-slate-900 dark:text-white leading-tight">StockFlow Workspace</h2>
+            <p className="text-[10px] uppercase font-semibold text-slate-500 dark:text-slate-400 tracking-wider">Multi-Warehouse Inventory</p>
           </div>
         </div>
       </div>
 
       {/* Right Controls */}
       <div className="flex items-center gap-4 sm:gap-6">
-        <button className="p-2 text-slate-400 hover:text-emerald-600 transition-colors relative cursor-pointer" title="Notifications">
-          <Bell className="w-5 h-5" />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 border-2 border-white"></span>
+        <button 
+          onClick={toggleTheme}
+          className="p-2 text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer" 
+          title="Toggle Theme"
+        >
+          {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </button>
 
-        <div className="h-8 w-px bg-slate-200 hidden sm:block"></div>
+        <button className="p-2 text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors relative cursor-pointer" title="Notifications">
+          <Bell className="w-5 h-5" />
+          <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 border-2 border-white dark:border-slate-900"></span>
+        </button>
+
+        <div className="h-8 w-px bg-slate-200 dark:bg-slate-800 hidden sm:block"></div>
 
         <div className="flex items-center gap-3">
           {/* User Greeting */}
           <div className="text-right hidden sm:block">
-            <p className="text-sm font-bold text-slate-900 leading-tight">{user?.name}</p>
-            <p className="text-[11px] font-semibold text-slate-500 leading-tight">{user?.email}</p>
+            <p className="text-sm font-bold text-slate-900 dark:text-white leading-tight">{user?.name}</p>
+            <p className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 leading-tight">{user?.email}</p>
           </div>
 
           {/* User Role Badge */}
