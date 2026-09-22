@@ -46,7 +46,7 @@ export const AppRoutes = () => {
     <Routes>
       <Route path="/admin" element={<Login allowedRole="ADMIN" />} />
       <Route path="/staff" element={<Login allowedRole="STAFF" />} />
-      <Route path="/login" element={<Navigate to="/staff" replace />} />
+      <Route path="/login" element={<Navigate to="/admin" replace />} />
 
       {/* Authenticated Application Shell */}
       <Route

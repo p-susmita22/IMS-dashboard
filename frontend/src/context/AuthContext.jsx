@@ -23,7 +23,9 @@ export const AuthProvider = ({ children }) => {
           }
         } catch (err) {
           console.error('Session restore failed:', err);
-          logout();
+          if (err.response && err.response.status === 401) {
+            logout();
+          }
         }
       }
       setLoading(false);
