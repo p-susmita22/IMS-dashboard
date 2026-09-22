@@ -1,0 +1,4 @@
+- `[x]` Update AppRoutes.jsx to replace /login with /admin and /staff
+- `[x]` Update Login.jsx to accept allowedRole prop
+- `[x]` Update Login.jsx UI and validation logic
+- `[x]` Test access rules and routing
