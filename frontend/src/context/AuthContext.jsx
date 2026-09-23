@@ -55,7 +55,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const isAdmin = user?.role === 'ADMIN';
-  const isManager = user?.role === 'MANAGER' || isAdmin;
   const isStaff = user?.role === 'STAFF';
 
   return (
@@ -67,7 +66,6 @@ export const AuthProvider = ({ children }) => {
         login,
         logout,
         isAdmin,
-        isManager,
         isStaff
       }}
     >

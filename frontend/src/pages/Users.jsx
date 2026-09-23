@@ -144,8 +144,6 @@ export const Users = () => {
                   className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                     u.role === 'ADMIN'
                       ? 'bg-purple-100 text-purple-800'
-                      : u.role === 'MANAGER'
-                      ? 'bg-blue-100 text-blue-800'
                       : 'bg-slate-100 text-slate-700'
                   }`}
                 >

@@ -16,7 +16,7 @@ router
   .get(getAdjustments)
   .post(createAdjustment);
 
-router.patch('/:id/approve', authorize('ADMIN', 'MANAGER'), approveAdjustment);
-router.patch('/:id/reject', authorize('ADMIN', 'MANAGER'), rejectAdjustment);
+router.patch('/:id/approve', authorize('ADMIN'), approveAdjustment);
+router.patch('/:id/reject', authorize('ADMIN'), rejectAdjustment);
 
 module.exports = router;

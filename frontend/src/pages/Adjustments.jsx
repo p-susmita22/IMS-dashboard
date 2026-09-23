@@ -20,7 +20,7 @@ export const Adjustments = () => {
   const [submitting, setSubmitting] = useState(false);
   const [actionLoading, setActionLoading] = useState({});
 
-  const { user, isAdmin, isManager } = useAuth();
+  const { user, isAdmin } = useAuth();
   const { showToast } = useToast();
 
   // Prerequisites
@@ -117,7 +117,7 @@ export const Adjustments = () => {
         physicalCount: countVal,
         reason,
         notes: notes.trim(),
-        autoApprove: autoApprove && (isAdmin || isManager)
+        autoApprove: autoApprove && isAdmin
       });
 
       if (res.success) {
@@ -263,7 +263,7 @@ export const Adjustments = () => {
                 {a.requestedBy?.name || 'Staff'}
               </td>
               <td className="px-5 py-3.5">
-                {a.status === 'PENDING' && (isAdmin || isManager) ? (
+                {a.status === 'PENDING' && isAdmin ? (
                   <div className="flex items-center gap-1.5">
                     <button
                       onClick={() => handleApprove(a._id)}
@@ -394,7 +394,7 @@ export const Adjustments = () => {
             onChange={(e) => setNotes(e.target.value)}
           />
 
-          {(isAdmin || isManager) && (
+          {isAdmin && (
             <div className="flex items-center gap-2 pt-1">
               <input
                 type="checkbox"

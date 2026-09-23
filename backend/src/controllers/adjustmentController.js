@@ -83,7 +83,7 @@ const createAdjustment = async (req, res, next) => {
     // Staff cannot approve their own adjustments!
     const canAutoApprove =
       autoApprove &&
-      (req.user.role === 'ADMIN' || req.user.role === 'MANAGER');
+      (req.user.role === 'ADMIN');
 
     if (canAutoApprove) {
       const stockResult = await adjustStock({

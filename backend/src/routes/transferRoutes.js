@@ -9,6 +9,6 @@ router.use(protect);
 router
   .route('/')
   .get(getTransfers)
-  .post(authorize('ADMIN', 'MANAGER'), createTransfer);
+  .post(authorize('ADMIN', 'STAFF'), createTransfer);
 
 module.exports = router;

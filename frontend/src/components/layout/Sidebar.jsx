@@ -22,7 +22,7 @@ import {
 import { useAuth } from '../../context/AuthContext';
 
 export const Sidebar = ({ isOpen, onClose }) => {
-  const { user, logout, isAdmin, isManager, isStaff } = useAuth();
+  const { user, logout, isAdmin, isStaff } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {

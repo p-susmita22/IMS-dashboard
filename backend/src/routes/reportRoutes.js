@@ -10,7 +10,7 @@ const { protect } = require('../middleware/authMiddleware');
 const { authorize } = require('../middleware/roleMiddleware');
 
 router.use(protect);
-router.use(authorize('ADMIN', 'MANAGER'));
+router.use(authorize('ADMIN'));
 
 router.get('/stock', getStockReport);
 router.get('/sales', getSalesReport);
