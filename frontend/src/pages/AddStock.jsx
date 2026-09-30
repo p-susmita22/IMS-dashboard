@@ -110,16 +110,16 @@ export const AddStock = () => {
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
+          className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div>
           <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-            <PlusCircle className="w-7 h-7 text-emerald-600" />
+            <PlusCircle className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />
             Add Stock (Stock In)
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 ">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 ">
             Receive inventory from vendor purchases. Every change logs an immutable audit trail.
           </p>
         </div>

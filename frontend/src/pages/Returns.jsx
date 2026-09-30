@@ -115,10 +115,10 @@ export const Returns = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-            <RotateCcw className="w-7 h-7 text-purple-600" />
+            <RotateCcw className="w-7 h-7 text-purple-600 dark:text-purple-400" />
             Customer Returns
           </h1>
-          <p className="text-sm text-slate-500  mt-0.5">
+          <p className="text-sm text-slate-500 dark:text-slate-400  mt-0.5">
             Log returned stock. GOOD condition returns to available stock; DAMAGED is isolated.
           </p>
         </div>
@@ -162,20 +162,20 @@ export const Returns = () => {
               <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                 {r.returnNumber}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">
+              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  whitespace-nowrap">
                 {new Date(r.createdAt).toLocaleDateString()}
               </td>
               <td className="px-5 py-3.5 font-bold text-slate-800 dark:text-slate-200 text-xs">
                 {r.customerName}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-600 ">
+              <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">
                 {r.locationId?.name}
               </td>
               <td className="px-5 py-3.5">
                 <span className="text-xs font-bold text-slate-900 dark:text-white block">
                   {r.variantId?.productId?.name || 'Product'}
                 </span>
-                <span className="text-[11px] font-mono text-slate-500  font-bold">
+                <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400  font-bold">
                   {r.variantId?.sku} ({r.variantId?.colour}/{r.variantId?.size})
                 </span>
               </td>
@@ -184,19 +184,19 @@ export const Returns = () => {
               </td>
               <td className="px-5 py-3.5">
                 {r.condition === 'GOOD' ? (
-                  <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded">
+                  <span className="bg-emerald-100 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded">
                     GOOD (Restocked)
                   </span>
                 ) : (
-                  <span className="bg-rose-100 text-rose-800 text-[10px] font-bold px-2 py-0.5 rounded">
+                  <span className="bg-rose-100 text-rose-800 dark:text-rose-300 text-[10px] font-bold px-2 py-0.5 rounded">
                     DAMAGED (Quarantined)
                   </span>
                 )}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-600 ">
+              <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">
                 {r.reason}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500 ">
+              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400 ">
                 {r.handledBy?.name || 'Staff'}
               </td>
             </tr>

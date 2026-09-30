@@ -83,7 +83,7 @@ export const OrderDetails = () => {
   if (!order) {
     return (
       <div className="text-center py-16">
-        <p className="text-base text-slate-600 ">Order not found.</p>
+        <p className="text-base text-slate-600 dark:text-slate-400 ">Order not found.</p>
         <Button onClick={() => navigate('/orders')} variant="secondary" className="mt-4">
           Back to Orders
         </Button>
@@ -101,7 +101,7 @@ export const OrderDetails = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={() => navigate('/orders')}
-            className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
+            className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
@@ -112,7 +112,7 @@ export const OrderDetails = () => {
               </h1>
               <OrderStatusBadge status={order.orderStatus} />
             </div>
-            <p className="text-xs text-slate-500  mt-0.5">
+            <p className="text-xs text-slate-500 dark:text-slate-400  mt-0.5">
               Created on {new Date(order.createdAt).toLocaleString()} by{' '}
               {order.createdBy?.name || 'Staff'}
             </p>
@@ -243,16 +243,16 @@ export const OrderDetails = () => {
 
       {/* Visual Status Progression Timeline */}
       <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-6">
-        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-6">
+        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 dark:text-slate-400 mb-6">
           Order Status Lifecycle
         </h3>
 
         {order.orderStatus === 'CANCELLED' ? (
-          <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 flex items-center gap-3 text-rose-900">
-            <XCircle className="w-6 h-6 text-rose-600 shrink-0" />
+          <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 flex items-center gap-3 text-rose-900 dark:text-rose-300">
+            <XCircle className="w-6 h-6 text-rose-600 dark:text-rose-400 shrink-0" />
             <div>
               <h4 className="font-bold text-sm">Order Cancelled</h4>
-              <p className="text-xs text-rose-700">
+              <p className="text-xs text-rose-700 dark:text-rose-400">
                 Any reserved stock has been safely released back into warehouse inventory.
               </p>
             </div>
@@ -269,7 +269,7 @@ export const OrderDetails = () => {
                     className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs transition-all z-10 ${
                       isDone
                         ? 'bg-emerald-600 text-white shadow-md shadow-emerald-600/30 ring-4 ring-emerald-50'
-                        : 'bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 border border-slate-200 dark:border-slate-700'
+                        : 'bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700'
                     }`}
                   >
                     {isDone ? <CheckCheck className="w-4 h-4" /> : idx + 1}
@@ -280,19 +280,19 @@ export const OrderDetails = () => {
                         isCurrent
                           ? 'text-slate-900 dark:text-white font-extrabold'
                           : isDone
-                          ? 'text-emerald-700'
-                          : 'text-slate-400 dark:text-slate-500'
+                          ? 'text-emerald-700 dark:text-emerald-400'
+                          : 'text-slate-400 dark:text-slate-500 dark:text-slate-400'
                       }`}
                     >
                       {st}
                     </span>
                     {st === 'CONFIRMED' && (
-                      <span className="text-[10px] text-purple-700 font-semibold block sm:inline">
+                      <span className="text-[10px] text-purple-700 dark:text-purple-400 font-semibold block sm:inline">
                         Stock Reserved
                       </span>
                     )}
                     {st === 'DISPATCHED' && (
-                      <span className="text-[10px] text-indigo-700 font-semibold block sm:inline">
+                      <span className="text-[10px] text-indigo-700 dark:text-indigo-400 font-semibold block sm:inline">
                         Stock Deducted
                       </span>
                     )}
@@ -308,31 +308,31 @@ export const OrderDetails = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Customer Details */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-5 space-y-2">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 dark:text-slate-400">
             Customer Information
           </h3>
           <p className="text-base font-bold text-slate-900 dark:text-white">{order.customerName}</p>
-          <p className="text-xs text-slate-600  font-mono font-medium">{order.phoneNumber}</p>
-          <p className="text-xs text-slate-500 ">{order.deliveryAddress}</p>
+          <p className="text-xs text-slate-600 dark:text-slate-400  font-mono font-medium">{order.phoneNumber}</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 ">{order.deliveryAddress}</p>
         </div>
 
         {/* Warehouse Details & Reservation Status */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-5 space-y-2">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 dark:text-slate-400">
             Fulfillment Warehouse
           </h3>
           <p className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-            <Building2 className="w-4 h-4 text-emerald-600" />
+            <Building2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
             {order.locationId?.name} ({order.locationId?.code})
           </p>
           <div className="pt-2 flex flex-wrap gap-2 text-xs">
             {order.isReserved && (
-              <span className="bg-purple-100 text-purple-800 font-bold px-2.5 py-1 rounded-lg">
+              <span className="bg-purple-100 text-purple-800 dark:text-purple-300 font-bold px-2.5 py-1 rounded-lg">
                 ● Stock Reserved
               </span>
             )}
             {order.isStockDeducted && (
-              <span className="bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-lg">
+              <span className="bg-emerald-100 text-emerald-800 dark:text-emerald-300 font-bold px-2.5 py-1 rounded-lg">
                 ✓ Physical Stock Deducted
               </span>
             )}
@@ -344,7 +344,7 @@ export const OrderDetails = () => {
       <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
         <div className="p-5 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
           <h3 className="text-sm font-bold text-slate-900 dark:text-white">Order Items</h3>
-          <span className="text-xs text-slate-400 dark:text-slate-500 font-medium">
+          <span className="text-xs text-slate-400 dark:text-slate-500 dark:text-slate-400 font-medium">
             {order.items?.length || 0} product(s)
           </span>
         </div>
@@ -352,7 +352,7 @@ export const OrderDetails = () => {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
-              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-slate-600  font-bold uppercase text-xs">
+              <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400  font-bold uppercase text-xs">
                 <th className="p-4">Product</th>
                 <th className="p-4">SKU</th>
                 <th className="p-4">Variant</th>
@@ -366,9 +366,9 @@ export const OrderDetails = () => {
                 <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
                   <td className="p-4 font-bold text-slate-900 dark:text-white">{it.productName}</td>
                   <td className="p-4 font-mono font-bold text-slate-700 dark:text-slate-300">{it.sku}</td>
-                  <td className="p-4 text-slate-600 ">{it.colour} / {it.size}</td>
+                  <td className="p-4 text-slate-600 dark:text-slate-400 ">{it.colour} / {it.size}</td>
                   <td className="p-4 text-right font-extrabold text-slate-900 dark:text-white">{it.quantity}</td>
-                  <td className="p-4 text-right text-slate-600 ">₹{it.price}</td>
+                  <td className="p-4 text-right text-slate-600 dark:text-slate-400 ">₹{it.price}</td>
                   <td className="p-4 text-right font-bold text-slate-900 dark:text-white">
                     ₹{it.total.toLocaleString()}
                   </td>
@@ -380,7 +380,7 @@ export const OrderDetails = () => {
                 <td colSpan={5} className="p-4 text-right text-slate-700 dark:text-slate-300">
                   Grand Total:
                 </td>
-                <td className="p-4 text-right font-black text-indigo-950 text-base">
+                <td className="p-4 text-right font-black text-indigo-950 dark:text-indigo-300 text-base">
                   ₹{order.totalAmount?.toLocaleString()}
                 </td>
               </tr>

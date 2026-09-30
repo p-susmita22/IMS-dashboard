@@ -93,7 +93,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 dark:text-slate-500 hover:text-slate-700 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-800"
+            className="p-1.5 rounded-lg text-slate-400 dark:text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-800"
             title="Close Sidebar"
           >
             <X className="w-5 h-5" />
@@ -107,7 +107,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
               return (
                 <div
                   key={idx}
-                  className="px-3 pt-4 pb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500"
+                  className="px-3 pt-4 pb-1 text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 dark:text-slate-400"
                 >
                   {item.header}
                 </div>
@@ -124,7 +124,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
                   `flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                     isActive
                       ? 'bg-emerald-50 dark:bg-emerald-600 text-emerald-700 dark:text-white shadow-sm shadow-emerald-600/10 dark:shadow-emerald-600/20 font-semibold'
-                      : 'text-slate-500   hover:text-emerald-700 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 dark:bg-slate-800/50 dark:hover:bg-slate-900/90'
+                      : 'text-slate-500 dark:text-slate-400   hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 dark:bg-slate-800/50 dark:hover:bg-slate-900/90'
                   }`
                 }
               >
@@ -159,7 +159,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
             <button
               onClick={handleLogout}
               title="Logout"
-              className="p-1.5 rounded-lg text-slate-400 dark:text-slate-500 hover:text-rose-500 hover:bg-rose-50 dark:hover:text-rose-400 dark:hover:bg-slate-800 transition-colors shrink-0"
+              className="p-1.5 rounded-lg text-slate-400 dark:text-slate-500 dark:text-slate-400 hover:text-rose-500 dark:text-rose-400 hover:bg-rose-50 dark:hover:text-rose-400 dark:hover:bg-slate-800 transition-colors shrink-0"
             >
               <LogOut className="w-4 h-4" />
             </button>

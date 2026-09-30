@@ -146,16 +146,16 @@ export const CreateOrder = () => {
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate('/orders')}
-          className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
+          className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div>
           <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-            <ShoppingCart className="w-7 h-7 text-indigo-600" />
+            <ShoppingCart className="w-7 h-7 text-indigo-600 dark:text-indigo-400" />
             Create Wholesale Order
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 ">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 ">
             Orders begin in NEW state. Stock will be reserved upon confirmation.
           </p>
         </div>
@@ -165,7 +165,7 @@ export const CreateOrder = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Customer Information */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 dark:text-slate-400 mb-3">
               Customer & Delivery Details
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -212,13 +212,13 @@ export const CreateOrder = () => {
           {/* Products List Section */}
           <div className="pt-4 border-t border-slate-100 dark:border-slate-700">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 dark:text-slate-400">
                 Order Items
               </h3>
               <button
                 type="button"
                 onClick={handleAddItem}
-                className="text-xs font-bold text-indigo-600 hover:text-indigo-700 flex items-center gap-1"
+                className="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:text-indigo-400 flex items-center gap-1"
               >
                 <Plus className="w-4 h-4" /> Add Another Product
               </button>
@@ -289,7 +289,7 @@ export const CreateOrder = () => {
                         <button
                           type="button"
                           onClick={() => handleRemoveItem(idx)}
-                          className="p-2 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors"
+                          className="p-2 text-rose-500 dark:text-rose-400 hover:bg-rose-50 rounded-lg transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -303,7 +303,7 @@ export const CreateOrder = () => {
             {/* Total Calculation Display */}
             <div className="mt-4 p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
               <span className="text-sm font-bold text-slate-700 dark:text-slate-300">Total Order Amount:</span>
-              <span className="text-xl font-black text-indigo-950">
+              <span className="text-xl font-black text-indigo-950 dark:text-indigo-300">
                 ₹{totalOrderAmount.toLocaleString()}
               </span>
             </div>

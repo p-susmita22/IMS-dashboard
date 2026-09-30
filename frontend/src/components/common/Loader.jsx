@@ -4,8 +4,8 @@ import { Loader2 } from 'lucide-react';
 export const Loader = ({ message = 'Loading...', size = 'md', className = '' }) => {
   return (
     <div className={`flex flex-col items-center justify-center py-12 px-4 ${className}`}>
-      <Loader2 className="w-8 h-8 text-emerald-600 animate-spin mb-3" />
-      {message && <p className="text-sm font-medium text-slate-500 ">{message}</p>}
+      <Loader2 className="w-8 h-8 text-emerald-600 dark:text-emerald-400 animate-spin mb-3" />
+      {message && <p className="text-sm font-medium text-slate-500 dark:text-slate-400 ">{message}</p>}
     </div>
   );
 };

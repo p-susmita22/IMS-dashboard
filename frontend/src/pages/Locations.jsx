@@ -91,10 +91,10 @@ export const Locations = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-            <Building2 className="w-7 h-7 text-emerald-600" />
+            <Building2 className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />
             Warehouses & Locations
           </h1>
-          <p className="text-sm text-slate-500  mt-0.5">
+          <p className="text-sm text-slate-500 dark:text-slate-400  mt-0.5">
             Physical warehouse locations. Stock is independently tracked and transferred between them.
           </p>
         </div>
@@ -141,17 +141,17 @@ export const Locations = () => {
                       <h3 className="text-base font-bold text-slate-900 dark:text-white leading-tight">
                         {loc.name}
                       </h3>
-                      <span className="font-mono text-xs font-bold text-slate-500  block mt-0.5">
+                      <span className="font-mono text-xs font-bold text-slate-500 dark:text-slate-400  block mt-0.5">
                         Code: {loc.code}
                       </span>
                     </div>
                     <div className="flex flex-col gap-1 items-end">
-                      <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded">
+                      <span className="bg-emerald-100 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded">
                         {loc.status}
                       </span>
                       <button
                         onClick={() => handleDeleteLocation(loc)}
-                        className="text-xs font-bold text-rose-500 hover:text-rose-600 flex items-center gap-1"
+                        className="text-xs font-bold text-rose-500 dark:text-rose-400 hover:text-rose-600 dark:text-rose-400 flex items-center gap-1"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                         Delete
@@ -159,16 +159,16 @@ export const Locations = () => {
                     </div>
                   </div>
 
-                  <div className="mt-3 space-y-1.5 text-xs text-slate-500 ">
+                  <div className="mt-3 space-y-1.5 text-xs text-slate-500 dark:text-slate-400 ">
                     {loc.address && (
                       <p className="flex items-start gap-1.5">
-                        <MapPin className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 shrink-0 mt-0.5" />
+                        <MapPin className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 dark:text-slate-400 shrink-0 mt-0.5" />
                         <span>{loc.address}</span>
                       </p>
                     )}
                     {loc.contactNumber && (
                       <p className="flex items-center gap-1.5">
-                        <Phone className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
+                        <Phone className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
                         <span>{loc.contactNumber}</span>
                       </p>
                     )}
@@ -178,7 +178,7 @@ export const Locations = () => {
                 {/* Warehouse Stock Breakdown */}
                 <div className="mt-5 pt-4 border-t border-slate-100 dark:border-slate-700 grid grid-cols-3 gap-2 text-center text-xs">
                   <div className="bg-slate-50 dark:bg-slate-800/50 p-2.5 rounded-xl">
-                    <span className="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500 block font-semibold">
+                    <span className="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500 dark:text-slate-400 block font-semibold">
                       Total
                     </span>
                     <strong className="text-base font-bold text-slate-800 dark:text-slate-200">
@@ -186,18 +186,18 @@ export const Locations = () => {
                     </strong>
                   </div>
                   <div className="bg-purple-50/60 p-2.5 rounded-xl">
-                    <span className="text-[10px] uppercase tracking-wider text-purple-700 block font-semibold">
+                    <span className="text-[10px] uppercase tracking-wider text-purple-700 dark:text-purple-400 block font-semibold">
                       Reserved
                     </span>
-                    <strong className="text-base font-bold text-purple-800">
+                    <strong className="text-base font-bold text-purple-800 dark:text-purple-300">
                       {sum.reservedStock}
                     </strong>
                   </div>
                   <div className="bg-emerald-50/60 p-2.5 rounded-xl">
-                    <span className="text-[10px] uppercase tracking-wider text-emerald-700 block font-semibold">
+                    <span className="text-[10px] uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block font-semibold">
                       Available
                     </span>
-                    <strong className="text-base font-extrabold text-emerald-700">
+                    <strong className="text-base font-extrabold text-emerald-700 dark:text-emerald-400">
                       {sum.availableStock}
                     </strong>
                   </div>

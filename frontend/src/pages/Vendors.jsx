@@ -116,10 +116,10 @@ export const Vendors = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-            <Users2 className="w-7 h-7 text-indigo-600" />
+            <Users2 className="w-7 h-7 text-indigo-600 dark:text-indigo-400" />
             Wholesale Suppliers & Vendors
           </h1>
-          <p className="text-sm text-slate-500  mt-0.5">
+          <p className="text-sm text-slate-500 dark:text-slate-400  mt-0.5">
             Suppliers for restocking. Products can be sourced from multiple vendors over time.
           </p>
         </div>
@@ -157,42 +157,42 @@ export const Vendors = () => {
                   <h3 className="text-base font-bold text-slate-900 dark:text-white leading-tight">
                     {v.name}
                   </h3>
-                  <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded">
+                  <span className="bg-emerald-100 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded">
                     {v.status}
                   </span>
                 </div>
                 {v.contactPerson && (
-                  <p className="text-xs text-slate-500  mt-1 font-medium">
+                  <p className="text-xs text-slate-500 dark:text-slate-400  mt-1 font-medium">
                     Contact: {v.contactPerson}
                   </p>
                 )}
 
-                <div className="mt-4 space-y-2 text-xs text-slate-600 ">
+                <div className="mt-4 space-y-2 text-xs text-slate-600 dark:text-slate-400 ">
                   {v.phone && (
                     <div className="flex items-center gap-2">
-                      <Phone className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
+                      <Phone className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
                       <span>{v.phone}</span>
                     </div>
                   )}
                   {v.email && (
                     <div className="flex items-center gap-2">
-                      <Mail className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
+                      <Mail className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
                       <span>{v.email}</span>
                     </div>
                   )}
                   {v.gstNumber && (
-                    <div className="text-[11px] font-mono text-slate-500 ">
+                    <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 ">
                       GST: <strong>{v.gstNumber}</strong>
                     </div>
                   )}
                   {v.address && (
-                    <p className="text-[11px] text-slate-500  truncate">{v.address}</p>
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400  truncate">{v.address}</p>
                   )}
                 </div>
               </div>
 
               <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
-                <span className="text-[11px] text-slate-400 dark:text-slate-500">
+                <span className="text-[11px] text-slate-400 dark:text-slate-500 dark:text-slate-400">
                   Added {new Date(v.createdAt).toLocaleDateString()}
                 </span>
                 <div className="flex gap-2">
@@ -229,14 +229,14 @@ export const Vendors = () => {
         {historyLoading ? (
           <Loader message="Loading purchase history..." />
         ) : !selectedVendorHistory || selectedVendorHistory.purchases.length === 0 ? (
-          <p className="text-center py-8 text-sm text-slate-500 ">
+          <p className="text-center py-8 text-sm text-slate-500 dark:text-slate-400 ">
             No stock purchases recorded from this vendor yet.
           </p>
         ) : (
           <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-slate-600  font-bold uppercase">
+                <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400  font-bold uppercase">
                   <th className="p-3">Date</th>
                   <th className="p-3">Product</th>
                   <th className="p-3">SKU</th>
@@ -249,7 +249,7 @@ export const Vendors = () => {
               <tbody className="divide-y divide-slate-100 dark:divide-slate-700 font-medium">
                 {selectedVendorHistory.purchases.map((p) => (
                   <tr key={p._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 dark:bg-slate-800/50">
-                    <td className="p-3 whitespace-nowrap text-slate-500 ">
+                    <td className="p-3 whitespace-nowrap text-slate-500 dark:text-slate-400 ">
                       {new Date(p.createdAt).toLocaleDateString()}
                     </td>
                     <td className="p-3 font-bold text-slate-900 dark:text-white">
@@ -258,16 +258,16 @@ export const Vendors = () => {
                     <td className="p-3 font-mono font-bold text-slate-700 dark:text-slate-300">
                       {p.variantId?.sku}
                     </td>
-                    <td className="p-3 text-slate-600 ">
+                    <td className="p-3 text-slate-600 dark:text-slate-400 ">
                       {p.locationId?.name}
                     </td>
                     <td className="p-3 text-right font-extrabold text-slate-900 dark:text-white">
                       +{p.quantity}
                     </td>
-                    <td className="p-3 text-right text-slate-600 ">
+                    <td className="p-3 text-right text-slate-600 dark:text-slate-400 ">
                       ₹{p.unitPrice || 0}
                     </td>
-                    <td className="p-3 text-right font-bold text-emerald-700">
+                    <td className="p-3 text-right font-bold text-emerald-700 dark:text-emerald-400">
                       ₹{(p.quantity * (p.unitPrice || 0)).toLocaleString()}
                     </td>
                   </tr>

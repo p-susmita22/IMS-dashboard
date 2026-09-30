@@ -14,7 +14,7 @@ export const Header = ({ onOpenSidebar, isSidebarOpen }) => {
         {!isSidebarOpen && (
           <button
             onClick={onOpenSidebar}
-            className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-600  hover:bg-emerald-50 hover:text-emerald-600 border border-slate-200 dark:border-slate-700 hover:border-emerald-200 transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+            className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400  hover:bg-emerald-50 hover:text-emerald-600 dark:text-emerald-400 border border-slate-200 dark:border-slate-700 hover:border-emerald-200 transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
             title="Toggle Menu"
           >
             <Menu className="w-6 h-6" />
@@ -36,13 +36,13 @@ export const Header = ({ onOpenSidebar, isSidebarOpen }) => {
       <div className="flex items-center gap-4 sm:gap-6">
         <button 
           onClick={toggleTheme}
-          className="p-2 text-slate-400 dark:text-slate-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer" 
+          className="p-2 text-slate-400 dark:text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-400 transition-colors cursor-pointer" 
           title="Toggle Theme"
         >
           {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
         </button>
 
-        <button className="p-2 text-slate-400 dark:text-slate-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors relative cursor-pointer" title="Notifications">
+        <button className="p-2 text-slate-400 dark:text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-400 transition-colors relative cursor-pointer" title="Notifications">
           <Bell className="w-5 h-5" />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-rose-500 border-2 border-white dark:border-slate-900"></span>
         </button>

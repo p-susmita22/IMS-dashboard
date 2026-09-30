@@ -64,7 +64,7 @@ export const Login = ({ allowedRole }) => {
         <h2 className="text-center text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
           {allowedRole === 'ADMIN' ? 'Admin Portal' : 'Staff Portal'}
         </h2>
-        <p className="mt-1.5 text-center text-sm text-slate-400 dark:text-slate-500">
+        <p className="mt-1.5 text-center text-sm text-slate-400 dark:text-slate-500 dark:text-slate-400">
           StockFlow IMS {allowedRole === 'ADMIN' ? 'Management' : 'Operations'}
         </p>
       </div>
@@ -107,7 +107,7 @@ export const Login = ({ allowedRole }) => {
 
           {/* Quick Demo Fill Buttons */}
           <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
-            <div className="flex items-center gap-1.5 mb-3 text-slate-500  text-xs font-semibold">
+            <div className="flex items-center gap-1.5 mb-3 text-slate-500 dark:text-slate-400  text-xs font-semibold">
               <Shield className="w-3.5 h-3.5" />
               <span>Instant 1-Click Demo Login</span>
             </div>

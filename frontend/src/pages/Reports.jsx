@@ -106,10 +106,10 @@ export const Reports = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-            <BarChart3 className="w-7 h-7 text-emerald-600" />
+            <BarChart3 className="w-7 h-7 text-emerald-600 dark:text-emerald-400" />
             Inventory & Financial Reports
           </h1>
-          <p className="text-sm text-slate-500  mt-0.5">
+          <p className="text-sm text-slate-500 dark:text-slate-400  mt-0.5">
             Audit stock levels, sales turnover, purchase volumes, and permanent stock trails.
           </p>
         </div>
@@ -122,7 +122,7 @@ export const Reports = () => {
             size="md"
             icon={FileSpreadsheet}
             loading={exporting}
-            className="border-emerald-300 text-emerald-800 hover:bg-emerald-50"
+            className="border-emerald-300 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-50"
           >
             Export Excel
           </Button>
@@ -132,7 +132,7 @@ export const Reports = () => {
             size="md"
             icon={FileText}
             loading={exporting}
-            className="border-rose-300 text-rose-800 hover:bg-rose-50"
+            className="border-rose-300 text-rose-800 dark:text-rose-300 hover:bg-rose-50"
           >
             Export PDF
           </Button>
@@ -150,7 +150,7 @@ export const Reports = () => {
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                 activeReport === r.id
                   ? 'bg-slate-900 text-white shadow-md'
-                  : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700'
+                  : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700'
               }`}
             >
               <Icon className="w-4 h-4 shrink-0" />
@@ -162,7 +162,7 @@ export const Reports = () => {
 
       {/* Filters Bar */}
       <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-wrap gap-3 items-center">
-        <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 ">
+        <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 dark:text-slate-400 ">
           <Filter className="w-4 h-4" /> Filters:
         </div>
 
@@ -182,7 +182,7 @@ export const Reports = () => {
         {activeReport !== 'stock' && (
           <>
             <div className="flex items-center gap-1.5">
-              <span className="text-xs text-slate-400 dark:text-slate-500">From:</span>
+              <span className="text-xs text-slate-400 dark:text-slate-500 dark:text-slate-400">From:</span>
               <input
                 type="date"
                 value={startDate}
@@ -191,7 +191,7 @@ export const Reports = () => {
               />
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="text-xs text-slate-400 dark:text-slate-500">To:</span>
+              <span className="text-xs text-slate-400 dark:text-slate-500 dark:text-slate-400">To:</span>
               <input
                 type="date"
                 value={endDate}
@@ -227,7 +227,7 @@ export const Reports = () => {
               setEndDate('');
               setMovementType('');
             }}
-            className="text-xs font-bold text-rose-600 hover:text-rose-700 ml-auto"
+            className="text-xs font-bold text-rose-600 dark:text-rose-400 hover:text-rose-700 dark:text-rose-400 ml-auto"
           >
             Reset Filters
           </button>
@@ -263,22 +263,22 @@ export const Reports = () => {
               {data.map((row, idx) => (
                 <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
                   <td className="px-5 py-3.5 font-bold text-slate-900 dark:text-white text-xs">{row.productName}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-500 ">{row.category}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400 ">{row.category}</td>
                   <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-slate-300 text-xs">{row.sku}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.colour} / {row.size}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">{row.colour} / {row.size}</td>
                   <td className="px-5 py-3.5 text-xs font-medium text-slate-700 dark:text-slate-300">{row.location}</td>
                   <td className="px-5 py-3.5 text-xs font-semibold text-slate-800 dark:text-slate-200">{row.totalStock}</td>
-                  <td className="px-5 py-3.5 text-xs font-semibold text-purple-700">{row.reservedStock}</td>
-                  <td className="px-5 py-3.5 text-sm font-extrabold text-emerald-700">{row.availableStock}</td>
-                  <td className="px-5 py-3.5 text-xs text-rose-600 font-semibold">{row.damagedStock}</td>
+                  <td className="px-5 py-3.5 text-xs font-semibold text-purple-700 dark:text-purple-400">{row.reservedStock}</td>
+                  <td className="px-5 py-3.5 text-sm font-extrabold text-emerald-700 dark:text-emerald-400">{row.availableStock}</td>
+                  <td className="px-5 py-3.5 text-xs text-rose-600 dark:text-rose-400 font-semibold">{row.damagedStock}</td>
                   <td className="px-5 py-3.5">
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                         row.status === 'OUT_OF_STOCK'
-                          ? 'bg-rose-100 text-rose-800'
+                          ? 'bg-rose-100 text-rose-800 dark:text-rose-300'
                           : row.status === 'LOW_STOCK'
-                          ? 'bg-amber-100 text-amber-800'
-                          : 'bg-emerald-100 text-emerald-800'
+                          ? 'bg-amber-100 text-amber-800 dark:text-amber-300'
+                          : 'bg-emerald-100 text-emerald-800 dark:text-emerald-300'
                       }`}
                     >
                       {row.status}
@@ -306,16 +306,16 @@ export const Reports = () => {
             >
               {data.map((row, idx) => (
                 <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
-                  <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">{row.date}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  whitespace-nowrap">{row.date}</td>
                   <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">{row.orderNumber}</td>
                   <td className="px-5 py-3.5 text-xs font-bold text-slate-800 dark:text-slate-200">{row.customerName}</td>
                   <td className="px-5 py-3.5 text-xs text-slate-900 dark:text-white font-medium">{row.productName}</td>
                   <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-slate-300 text-xs">{row.sku}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.location}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">{row.location}</td>
                   <td className="px-5 py-3.5 text-xs font-extrabold text-slate-900 dark:text-white">{row.quantity}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600 ">₹{row.price}</td>
-                  <td className="px-5 py-3.5 text-xs font-black text-indigo-950">₹{(row.total || row.totalAmount || 0).toLocaleString()}</td>
-                  <td className="px-5 py-3.5 text-[10px] font-bold text-slate-600 ">{row.status}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">₹{row.price}</td>
+                  <td className="px-5 py-3.5 text-xs font-black text-indigo-950 dark:text-indigo-300">₹{(row.total || row.totalAmount || 0).toLocaleString()}</td>
+                  <td className="px-5 py-3.5 text-[10px] font-bold text-slate-600 dark:text-slate-400 ">{row.status}</td>
                 </tr>
               ))}
             </Table>
@@ -337,15 +337,15 @@ export const Reports = () => {
             >
               {data.map((row, idx) => (
                 <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
-                  <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">{row.date}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  whitespace-nowrap">{row.date}</td>
                   <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">{row.productName}</td>
                   <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-slate-300 text-xs">{row.sku}</td>
                   <td className="px-5 py-3.5 text-xs font-semibold text-slate-800 dark:text-slate-200">{row.vendor}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.location}</td>
-                  <td className="px-5 py-3.5 text-xs font-extrabold text-emerald-700">+{row.quantity}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600 ">₹{row.purchasePrice}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">{row.location}</td>
+                  <td className="px-5 py-3.5 text-xs font-extrabold text-emerald-700 dark:text-emerald-400">+{row.quantity}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">₹{row.purchasePrice}</td>
                   <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">₹{(row.totalAmount || 0).toLocaleString()}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-500 ">{row.performedBy}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400 ">{row.performedBy}</td>
                 </tr>
               ))}
             </Table>
@@ -368,32 +368,32 @@ export const Reports = () => {
             >
               {data.map((row, idx) => (
                 <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
-                  <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">{row.date}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  whitespace-nowrap">{row.date}</td>
                   <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">{row.productName}</td>
                   <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-slate-300 text-xs">{row.sku}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.location}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">{row.location}</td>
                   <td className="px-5 py-3.5">
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                         row.movementType === 'STOCK_IN'
-                          ? 'bg-emerald-100 text-emerald-800'
+                          ? 'bg-emerald-100 text-emerald-800 dark:text-emerald-300'
                           : row.movementType === 'STOCK_OUT'
-                          ? 'bg-rose-100 text-rose-800'
+                          ? 'bg-rose-100 text-rose-800 dark:text-rose-300'
                           : row.movementType?.includes('TRANSFER')
-                          ? 'bg-blue-100 text-blue-800'
+                          ? 'bg-blue-100 text-blue-800 dark:text-blue-300'
                           : row.movementType?.includes('RETURN')
-                          ? 'bg-purple-100 text-purple-800'
-                          : 'bg-amber-100 text-amber-800'
+                          ? 'bg-purple-100 text-purple-800 dark:text-purple-300'
+                          : 'bg-amber-100 text-amber-800 dark:text-amber-300'
                       }`}
                     >
                       {row.movementType}
                     </span>
                   </td>
                   <td className="px-5 py-3.5 text-xs font-extrabold text-slate-900 dark:text-white">{row.quantity}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-500  font-mono">{row.previousQuantity}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  font-mono">{row.previousQuantity}</td>
                   <td className="px-5 py-3.5 text-xs font-black text-slate-900 dark:text-white font-mono">{row.newQuantity}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-500  max-w-xs truncate">{row.reason}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.user}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  max-w-xs truncate">{row.reason}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">{row.user}</td>
                 </tr>
               ))}
             </Table>
