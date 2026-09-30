@@ -8,6 +8,7 @@ import { Button } from '../components/common/Button';
 import { Input } from '../components/common/Input';
 import { Select } from '../components/common/Select';
 import { useToast } from '../context/ToastContext';
+import { validateName } from '../utils/validation';
 
 export const StockOut = () => {
   const navigate = useNavigate();
@@ -102,6 +103,14 @@ export const StockOut = () => {
     if (!selectedVariantId || !selectedLocationId || !quantity) {
       showToast('Please fill all required fields', 'error');
       return;
+    }
+
+    if (customerName) {
+      const nameError = validateName(customerName);
+      if (nameError) {
+        showToast(nameError, 'error');
+        return;
+      }
     }
 
     if (requestedQty <= 0) {

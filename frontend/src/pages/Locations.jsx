@@ -8,6 +8,7 @@ import { Loader } from '../components/common/Loader';
 import { EmptyState } from '../components/common/EmptyState';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
+import { validatePhone } from '../utils/validation';
 
 export const Locations = () => {
   const [locations, setLocations] = useState([]);
@@ -48,6 +49,14 @@ export const Locations = () => {
     if (!formData.name || !formData.code) {
       showToast('Warehouse name and code are required', 'error');
       return;
+    }
+
+    if (formData.contactNumber) {
+      const phoneError = validatePhone(formData.contactNumber);
+      if (phoneError) {
+        showToast(phoneError, 'error');
+        return;
+      }
     }
 
     setSubmitting(true);

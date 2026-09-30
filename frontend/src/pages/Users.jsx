@@ -10,6 +10,7 @@ import { Loader } from '../components/common/Loader';
 import { EmptyState } from '../components/common/EmptyState';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
+import { validateName, validateEmail } from '../utils/validation';
 
 export const Users = () => {
   const [users, setUsers] = useState([]);
@@ -46,6 +47,18 @@ export const Users = () => {
     e.preventDefault();
     if (!name || !email || !password) {
       showToast('Please fill all required fields', 'error');
+      return;
+    }
+
+    const nameError = validateName(name);
+    if (nameError) {
+      showToast(nameError, 'error');
+      return;
+    }
+
+    const emailError = validateEmail(email);
+    if (emailError) {
+      showToast(emailError, 'error');
       return;
     }
 

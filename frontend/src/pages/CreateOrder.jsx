@@ -8,6 +8,7 @@ import { Button } from '../components/common/Button';
 import { Input } from '../components/common/Input';
 import { Select } from '../components/common/Select';
 import { useToast } from '../context/ToastContext';
+import { validateName, validatePhone } from '../utils/validation';
 
 export const CreateOrder = () => {
   const navigate = useNavigate();
@@ -107,6 +108,18 @@ export const CreateOrder = () => {
 
     if (!customerName || !phoneNumber || !deliveryAddress || !locationId) {
       showToast('Please fill all customer and location details', 'error');
+      return;
+    }
+
+    const nameError = validateName(customerName);
+    if (nameError) {
+      showToast(nameError, 'error');
+      return;
+    }
+
+    const phoneError = validatePhone(phoneNumber);
+    if (phoneError) {
+      showToast(phoneError, 'error');
       return;
     }
 

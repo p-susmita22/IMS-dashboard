@@ -9,6 +9,7 @@ import { Loader } from '../components/common/Loader';
 import { EmptyState } from '../components/common/EmptyState';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
+import { validateName, validatePhone, validateEmail } from '../utils/validation';
 
 export const Vendors = () => {
   const [vendors, setVendors] = useState([]);
@@ -71,6 +72,28 @@ export const Vendors = () => {
     if (!formData.name) {
       showToast('Vendor name is required', 'error');
       return;
+    }
+
+    const nameError = validateName(formData.name);
+    if (nameError) {
+      showToast(nameError, 'error');
+      return;
+    }
+
+    if (formData.phone) {
+      const phoneError = validatePhone(formData.phone);
+      if (phoneError) {
+        showToast(phoneError, 'error');
+        return;
+      }
+    }
+
+    if (formData.email) {
+      const emailError = validateEmail(formData.email);
+      if (emailError) {
+        showToast(emailError, 'error');
+        return;
+      }
     }
 
     setSubmitting(true);
