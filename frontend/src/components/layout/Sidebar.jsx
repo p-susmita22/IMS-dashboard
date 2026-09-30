@@ -133,7 +133,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
                   <span>{item.label}</span>
                 </div>
                 {item.badge && (
-                  <span className="text-xs font-bold px-1.5 py-0.5 rounded-md bg-slate-100  text-slate-500  dark:text-white">
+                  <span className="text-xs font-bold px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-white">
                     {item.badge}
                   </span>
                 )}
