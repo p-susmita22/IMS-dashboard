@@ -24,6 +24,7 @@ export const StockOut = () => {
   const [selectedLocationId, setSelectedLocationId] = useState('');
   const [quantity, setQuantity] = useState('');
   const [customerName, setCustomerName] = useState('');
+  const [customerAddress, setCustomerAddress] = useState('');
   const [orderNumber, setOrderNumber] = useState('');
   const [reason, setReason] = useState('Sale / Wholesale Fulfillment');
   const [notes, setNotes] = useState('');
@@ -118,6 +119,10 @@ export const StockOut = () => {
 
     setSubmitting(true);
     try {
+      const finalNotes = customerAddress.trim() 
+        ? `Address: ${customerAddress.trim()}${notes.trim() ? ` | ${notes.trim()}` : ''}`
+        : notes.trim();
+
       const res = await inventoryApi.stockOut({
         variantId: selectedVariantId,
         locationId: selectedLocationId,
@@ -125,7 +130,7 @@ export const StockOut = () => {
         customerName: customerName.trim(),
         orderNumber: orderNumber.trim(),
         reason: reason.trim(),
-        notes: notes.trim()
+        notes: finalNotes
       });
 
       if (res.success) {
@@ -285,17 +290,26 @@ export const StockOut = () => {
             />
           </div>
 
+          <div className="grid grid-cols-1 gap-4">
+            <Input
+              label="7. Order Address / Location"
+              placeholder="e.g. 123 Main St, New York"
+              value={customerAddress}
+              onChange={(e) => setCustomerAddress(e.target.value)}
+            />
+          </div>
+
           {/* 6. Reason & Notes */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Input
-              label="7. Reason"
+              label="8. Reason"
               placeholder="e.g. Sale, Consignment dispatch"
               value={reason}
               onChange={(e) => setReason(e.target.value)}
             />
 
             <Input
-              label="8. Notes"
+              label="9. Notes"
               placeholder="e.g. Dispatched via Express logistics"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
