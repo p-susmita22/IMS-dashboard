@@ -699,7 +699,7 @@ export const Products = () => {
                         placeholder="0"
                         value={v.initialStock}
                         onChange={(e) => handleVariantChange(idx, 'initialStock', e.target.value)}
-                        className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-emerald-50 dark:bg-emerald-900/50/50 focus:bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                        className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-emerald-50/50 dark:bg-emerald-900/30 focus:bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                       />
                     </div>
                   </div>

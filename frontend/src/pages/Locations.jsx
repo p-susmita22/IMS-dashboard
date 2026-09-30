@@ -185,7 +185,7 @@ export const Locations = () => {
                       {sum.totalStock}
                     </strong>
                   </div>
-                  <div className="bg-purple-50 dark:bg-purple-900/50/60 p-2.5 rounded-xl">
+                  <div className="bg-purple-50/60 dark:bg-purple-900/30 p-2.5 rounded-xl">
                     <span className="text-[10px] uppercase tracking-wider text-purple-700 dark:text-white block font-semibold">
                       Reserved
                     </span>
@@ -193,7 +193,7 @@ export const Locations = () => {
                       {sum.reservedStock}
                     </strong>
                   </div>
-                  <div className="bg-emerald-50 dark:bg-emerald-900/50/60 p-2.5 rounded-xl">
+                  <div className="bg-emerald-50/60 dark:bg-emerald-900/30 p-2.5 rounded-xl">
                     <span className="text-[10px] uppercase tracking-wider text-emerald-700 dark:text-white block font-semibold">
                       Available
                     </span>
