@@ -87,8 +87,8 @@ export const Dashboard = () => {
     <div className="space-y-6 sm:space-y-8">
       {/* 1. Global Search Bar */}
       <div className="relative">
-        <div className="relative flex items-center shadow-lg shadow-slate-200/50 rounded-2xl bg-white border border-slate-200 overflow-hidden focus-within:ring-2 focus-within:ring-emerald-500 focus-within:border-emerald-500 transition-all">
-          <div className="pl-4 sm:pl-5 text-slate-400">
+        <div className="relative flex items-center shadow-lg shadow-slate-200/50 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden focus-within:ring-2 focus-within:ring-emerald-500 focus-within:border-emerald-500 transition-all">
+          <div className="pl-4 sm:pl-5 text-slate-400 dark:text-slate-500">
             <Search className="w-5 h-5 sm:w-6 sm:h-6" />
           </div>
           <input
@@ -96,7 +96,7 @@ export const Dashboard = () => {
             value={searchQuery}
             onChange={handleSearch}
             placeholder="Search Product, SKU, Barcode, Size, Colour, Vendor..."
-            className="w-full py-3.5 sm:py-4 px-3 sm:px-4 text-sm sm:text-base text-slate-900 placeholder:text-slate-400 focus:outline-none bg-transparent"
+            className="w-full py-3.5 sm:py-4 px-3 sm:px-4 text-sm sm:text-base text-slate-900 dark:text-white placeholder:text-slate-400 dark:text-slate-500 focus:outline-none bg-transparent"
           />
           {searchQuery && (
             <button
@@ -104,7 +104,7 @@ export const Dashboard = () => {
                 setSearchQuery('');
                 setSearchResults([]);
               }}
-              className="pr-4 text-xs font-semibold text-slate-400 hover:text-slate-600"
+              className="pr-4 text-xs font-semibold text-slate-400 dark:text-slate-500 hover:text-slate-600 "
             >
               Clear
             </button>
@@ -113,13 +113,13 @@ export const Dashboard = () => {
 
         {/* Live Search Results Dropdown Overlay */}
         {searchQuery.trim().length > 0 && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-slate-200 z-50 max-h-[70vh] overflow-y-auto divide-y divide-slate-100">
+          <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 z-50 max-h-[70vh] overflow-y-auto divide-y divide-slate-100 dark:divide-slate-700">
             {searching ? (
-              <div className="p-6 text-center text-slate-500 text-sm">
+              <div className="p-6 text-center text-slate-500  text-sm">
                 Searching inventory...
               </div>
             ) : searchResults.length === 0 ? (
-              <div className="p-6 text-center text-slate-500 text-sm">
+              <div className="p-6 text-center text-slate-500  text-sm">
                 No matching product, variant, or vendor found for "{searchQuery}".
               </div>
             ) : (
@@ -130,20 +130,20 @@ export const Dashboard = () => {
                     navigate(`/products/${item.productId}`);
                     setSearchQuery('');
                   }}
-                  className="p-4 hover:bg-slate-50 cursor-pointer transition-colors"
+                  className="p-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 dark:bg-slate-800/50 cursor-pointer transition-colors"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-slate-900 text-sm sm:text-base">
+                        <span className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">
                           {item.productName}
                         </span>
-                        <span className="text-xs px-2 py-0.5 rounded-md bg-slate-100 font-semibold text-slate-700">
+                        <span className="text-xs px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 font-semibold text-slate-700 dark:text-slate-300">
                           {item.colour} / {item.size}
                         </span>
                       </div>
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500 mt-1">
-                        <span>SKU: <strong className="text-slate-700">{item.sku}</strong></span>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500  mt-1">
+                        <span>SKU: <strong className="text-slate-700 dark:text-slate-300">{item.sku}</strong></span>
                         {item.barcode && <span>Barcode: {item.barcode}</span>}
                         <span>Vendor: {item.vendor}</span>
                       </div>
@@ -151,8 +151,8 @@ export const Dashboard = () => {
 
                     <div className="flex items-center gap-4 self-end sm:self-center">
                       <div className="text-right">
-                        <div className="text-xs text-slate-400 font-medium">Physical: {item.totalStock} | Reserved: {item.reservedStock}</div>
-                        <div className="text-sm font-bold text-slate-900">
+                        <div className="text-xs text-slate-400 dark:text-slate-500 font-medium">Physical: {item.totalStock} | Reserved: {item.reservedStock}</div>
+                        <div className="text-sm font-bold text-slate-900 dark:text-white">
                           Available: <span className="text-emerald-600">{item.availableStock}</span>
                         </div>
                       </div>
@@ -165,9 +165,9 @@ export const Dashboard = () => {
 
                   {/* Warehouse Breakdown */}
                   {item.locations && item.locations.length > 0 && (
-                    <div className="mt-2.5 pt-2 border-t border-slate-100 flex flex-wrap gap-2 text-[11px] text-slate-600">
+                    <div className="mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-700 flex flex-wrap gap-2 text-[11px] text-slate-600 ">
                       {item.locations.map((loc, lIdx) => (
-                        <span key={lIdx} className="bg-slate-100 px-2 py-0.5 rounded">
+                        <span key={lIdx} className="bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">
                           {loc.locationName}: <strong>{loc.available}</strong> avail ({loc.total} total)
                         </span>
                       ))}
@@ -229,27 +229,27 @@ export const Dashboard = () => {
       {/* 3. Dashboard Stock Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
         {/* Total Products */}
-        <div className="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm flex items-center justify-between">
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <p className="text-xs font-semibold text-slate-500  uppercase tracking-wider">
               Total Products
             </p>
-            <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+            <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
               {cards.totalProducts.toLocaleString()}
             </p>
           </div>
-          <div className="w-11 h-11 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600">
+          <div className="w-11 h-11 rounded-xl bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 ">
             <Package className="w-6 h-6" />
           </div>
         </div>
 
         {/* Total Stock */}
-        <div className="bg-white p-4 sm:p-6 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm flex items-center justify-between">
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+            <p className="text-xs font-semibold text-slate-500  uppercase tracking-wider">
               Total Stock Units
             </p>
-            <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+            <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
               {cards.totalStock.toLocaleString()}
             </p>
           </div>
@@ -259,7 +259,7 @@ export const Dashboard = () => {
         </div>
 
         {/* Low Stock */}
-        <div className="bg-white p-4 sm:p-6 rounded-2xl border border-amber-200 bg-amber-50/20 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl border border-amber-200 bg-amber-50/20 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-xs font-semibold text-amber-700 uppercase tracking-wider">
               Low Stock
@@ -274,7 +274,7 @@ export const Dashboard = () => {
         </div>
 
         {/* Out of Stock */}
-        <div className="bg-white p-4 sm:p-6 rounded-2xl border border-rose-200 bg-rose-50/20 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl border border-rose-200 bg-rose-50/20 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-xs font-semibold text-rose-700 uppercase tracking-wider">
               Out of Stock
@@ -292,31 +292,31 @@ export const Dashboard = () => {
       {/* 4. Today's Activity & Alerts Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Today's Activity */}
-        <div className="bg-white p-5 sm:p-6 rounded-3xl border border-slate-200/80 shadow-sm">
+        <div className="bg-white dark:bg-slate-800 p-5 sm:p-6 rounded-3xl border border-slate-200 dark:border-slate-700/80 shadow-sm">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-              <Clock className="w-5 h-5 text-slate-500" /> Today's Activity
+            <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <Clock className="w-5 h-5 text-slate-500 " /> Today's Activity
             </h3>
-            <span className="text-xs font-semibold text-slate-400">Live summary</span>
+            <span className="text-xs font-semibold text-slate-400 dark:text-slate-500">Live summary</span>
           </div>
 
           <div className="space-y-3">
             <div className="flex items-center justify-between p-3 rounded-xl bg-emerald-50/60 border border-emerald-100">
               <div className="flex items-center gap-2.5">
                 <TrendingUp className="w-4 h-4 text-emerald-600" />
-                <span className="text-sm font-semibold text-slate-700">Stock Added</span>
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Stock Added</span>
               </div>
               <span className="text-base font-bold text-emerald-700">
                 +{todayActivity.stockAdded}
               </span>
             </div>
 
-            <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100">
+            <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
               <div className="flex items-center gap-2.5">
-                <TrendingDown className="w-4 h-4 text-slate-600" />
-                <span className="text-sm font-semibold text-slate-700">Stock Sold / Out</span>
+                <TrendingDown className="w-4 h-4 text-slate-600 " />
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Stock Sold / Out</span>
               </div>
-              <span className="text-base font-bold text-slate-800">
+              <span className="text-base font-bold text-slate-800 dark:text-slate-200">
                 -{todayActivity.stockSold}
               </span>
             </div>
@@ -324,7 +324,7 @@ export const Dashboard = () => {
             <div className="flex items-center justify-between p-3 rounded-xl bg-blue-50/60 border border-blue-100">
               <div className="flex items-center gap-2.5">
                 <ArrowLeftRight className="w-4 h-4 text-blue-600" />
-                <span className="text-sm font-semibold text-slate-700">Transferred</span>
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Transferred</span>
               </div>
               <span className="text-base font-bold text-blue-700">
                 {todayActivity.stockTransferred}
@@ -334,7 +334,7 @@ export const Dashboard = () => {
             <div className="flex items-center justify-between p-3 rounded-xl bg-purple-50/60 border border-purple-100">
               <div className="flex items-center gap-2.5">
                 <RotateCcw className="w-4 h-4 text-purple-600" />
-                <span className="text-sm font-semibold text-slate-700">Returns Handled</span>
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Returns Handled</span>
               </div>
               <span className="text-base font-bold text-purple-700">
                 {todayActivity.returns}
@@ -344,10 +344,10 @@ export const Dashboard = () => {
         </div>
 
         {/* Critical Alerts (Low Stock & Out of Stock) */}
-        <div className="lg:col-span-2 bg-white p-5 sm:p-6 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+        <div className="lg:col-span-2 bg-white dark:bg-slate-800 p-5 sm:p-6 rounded-3xl border border-slate-200 dark:border-slate-700/80 shadow-sm flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
+              <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <AlertTriangle className="w-5 h-5 text-amber-500" /> Critical Stock Alerts
               </h3>
               {alerts.pendingOrdersCount > 0 && (
@@ -358,7 +358,7 @@ export const Dashboard = () => {
             </div>
 
             {alerts.outOfStock.length === 0 && alerts.lowStock.length === 0 ? (
-              <p className="text-sm text-slate-500 py-6 text-center">
+              <p className="text-sm text-slate-500  py-6 text-center">
                 All variants have healthy inventory levels. No critical stock alerts!
               </p>
             ) : (
@@ -408,8 +408,8 @@ export const Dashboard = () => {
             )}
           </div>
 
-          <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
-            <span className="text-xs text-slate-500 font-medium">
+          <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+            <span className="text-xs text-slate-500  font-medium">
               Immediate restocking recommended for flagged items.
             </span>
             <button

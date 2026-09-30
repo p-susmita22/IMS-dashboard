@@ -84,11 +84,11 @@ export const TrashBin = () => {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-3">
             <Trash2 className="w-8 h-8 text-rose-500" />
             Trash Bin
           </h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-500  mt-0.5">
             Manage and permanently delete soft-deleted items.
           </p>
         </div>
@@ -106,7 +106,7 @@ export const TrashBin = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex items-center gap-2 border-b border-slate-200">
+      <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-700">
         {[
           { id: '', label: 'All Items' },
           { id: 'product', label: 'Products' },
@@ -120,7 +120,7 @@ export const TrashBin = () => {
             className={`px-4 py-3 text-sm font-semibold border-b-2 transition-colors ${
               activeTab === tab.id
                 ? 'border-emerald-600 text-emerald-700'
-                : 'border-transparent text-slate-500 hover:text-slate-700 hover:border-slate-300'
+                : 'border-transparent text-slate-500  hover:text-slate-700 dark:text-slate-300 hover:border-slate-300 dark:border-slate-600'
             }`}
           >
             {tab.label}
@@ -138,21 +138,21 @@ export const TrashBin = () => {
           description="No deleted items found."
         />
       ) : (
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
           <Table
             headers={['Item Type', 'Name / ID', 'Deleted At', 'Actions']}
           >
             {items.map((item) => (
-              <tr key={item._id} className="hover:bg-slate-50/70">
+              <tr key={item._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
                 <td className="px-5 py-3.5">
-                  <span className="px-2 py-1 bg-slate-100 text-slate-700 font-semibold rounded text-xs uppercase tracking-wider">
+                  <span className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold rounded text-xs uppercase tracking-wider">
                     {item.trashType}
                   </span>
                 </td>
-                <td className="px-5 py-3.5 font-semibold text-slate-900 text-sm">
+                <td className="px-5 py-3.5 font-semibold text-slate-900 dark:text-white text-sm">
                   {item.title}
                 </td>
-                <td className="px-5 py-3.5 text-xs text-slate-500">
+                <td className="px-5 py-3.5 text-xs text-slate-500 ">
                   {new Date(item.deletedAt).toLocaleString()}
                 </td>
                 <td className="px-5 py-3.5">
@@ -196,11 +196,11 @@ export const TrashBin = () => {
                 This action cannot be undone. This {itemToDelete.trashType} will be permanently removed from the system.
               </p>
             </div>
-            <p className="text-sm text-slate-600">
+            <p className="text-sm text-slate-600 ">
               Are you sure you want to permanently delete <strong>{itemToDelete.title}</strong>?
             </p>
             
-            <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
+            <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-700">
               <Button onClick={() => setIsConfirmOpen(false)} variant="secondary">
                 Cancel
               </Button>

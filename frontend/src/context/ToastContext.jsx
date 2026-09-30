@@ -29,10 +29,10 @@ export const ToastProvider = ({ children }) => {
             key={toast.id}
             className={`pointer-events-auto flex items-start gap-3 p-4 rounded-xl shadow-lg border text-sm font-medium transition-all transform duration-300 animate-in fade-in slide-in-from-bottom-2 ${
               toast.type === 'success'
-                ? 'bg-white border-emerald-200 text-emerald-950 shadow-emerald-500/10'
+                ? 'bg-white dark:bg-slate-800 border-emerald-200 text-emerald-950 shadow-emerald-500/10'
                 : toast.type === 'error'
-                ? 'bg-white border-rose-200 text-rose-950 shadow-rose-500/10'
-                : 'bg-white border-blue-200 text-blue-950 shadow-blue-500/10'
+                ? 'bg-white dark:bg-slate-800 border-rose-200 text-rose-950 shadow-rose-500/10'
+                : 'bg-white dark:bg-slate-800 border-blue-200 text-blue-950 shadow-blue-500/10'
             }`}
           >
             {toast.type === 'success' && (
@@ -47,7 +47,7 @@ export const ToastProvider = ({ children }) => {
             <div className="flex-1 leading-snug">{toast.message}</div>
             <button
               onClick={() => removeToast(toast.id)}
-              className="text-slate-400 hover:text-slate-600 -mr-1 -mt-1 p-1 rounded-lg"
+              className="text-slate-400 dark:text-slate-500 hover:text-slate-600  -mr-1 -mt-1 p-1 rounded-lg"
             >
               <X className="w-4 h-4" />
             </button>

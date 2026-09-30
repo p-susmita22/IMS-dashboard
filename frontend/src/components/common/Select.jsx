@@ -18,7 +18,7 @@ export const Select = ({
       {label && (
         <label
           htmlFor={name}
-          className="block text-xs font-semibold uppercase tracking-wider text-slate-700 mb-1.5"
+          className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5"
         >
           {label} {required && <span className="text-rose-500">*</span>}
         </label>
@@ -31,10 +31,10 @@ export const Select = ({
           onChange={onChange}
           disabled={disabled}
           required={required}
-          className={`block w-full rounded-xl border bg-white px-3.5 py-2.5 text-sm text-slate-900 transition-colors focus:outline-none focus:ring-2 disabled:bg-slate-100 disabled:cursor-not-allowed ${
+          className={`block w-full rounded-xl border bg-white dark:bg-slate-800 px-3.5 py-2.5 text-sm text-slate-900 dark:text-white transition-colors focus:outline-none focus:ring-2 disabled:bg-slate-100 dark:bg-slate-700 disabled:cursor-not-allowed ${
             error
               ? 'border-rose-300 focus:border-rose-500 focus:ring-rose-200'
-              : 'border-slate-300 focus:border-slate-900 focus:ring-slate-100'
+              : 'border-slate-300 dark:border-slate-600 focus:border-slate-900 focus:ring-slate-100'
           }`}
           {...props}
         >

@@ -144,22 +144,22 @@ export const StockOut = () => {
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition-colors"
+          className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
-            <MinusCircle className="w-7 h-7 text-slate-900" />
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
+            <MinusCircle className="w-7 h-7 text-slate-900 dark:text-white" />
             Stock Out (Sale / Dispatch)
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500">
+          <p className="text-xs sm:text-sm text-slate-500 ">
             Deduct physical inventory. Negative stock is strictly prevented.
           </p>
         </div>
       </div>
 
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8">
+      <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 sm:p-8">
         <form onSubmit={handleSubmit} className="space-y-5">
           {/* 1. Product Selection */}
           <Select
@@ -227,16 +227,16 @@ export const StockOut = () => {
                 )}
               </div>
               <div className="grid grid-cols-3 gap-2 text-center text-xs">
-                <div className="bg-white/80 p-2 rounded-xl border border-slate-200">
-                  <span className="text-slate-500 block">Total Stock</span>
-                  <strong className="text-base text-slate-900">{stockInfo.total}</strong>
+                <div className="bg-white dark:bg-slate-800/80 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <span className="text-slate-500  block">Total Stock</span>
+                  <strong className="text-base text-slate-900 dark:text-white">{stockInfo.total}</strong>
                 </div>
-                <div className="bg-white/80 p-2 rounded-xl border border-slate-200">
-                  <span className="text-slate-500 block">Reserved</span>
+                <div className="bg-white dark:bg-slate-800/80 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <span className="text-slate-500  block">Reserved</span>
                   <strong className="text-base text-indigo-600">{stockInfo.reserved}</strong>
                 </div>
-                <div className="bg-white/80 p-2 rounded-xl border border-slate-200">
-                  <span className="text-slate-500 block">Available</span>
+                <div className="bg-white dark:bg-slate-800/80 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <span className="text-slate-500  block">Available</span>
                   <strong
                     className={`text-base font-extrabold ${
                       isInsufficient ? 'text-rose-600' : 'text-emerald-600'
@@ -302,7 +302,7 @@ export const StockOut = () => {
             />
           </div>
 
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-end gap-3">
             <Button
               type="button"
               variant="secondary"

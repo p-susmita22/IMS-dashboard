@@ -91,11 +91,11 @@ export const Users = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
             <UserCheck className="w-7 h-7 text-indigo-600" />
             User Management
           </h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-500  mt-0.5">
             Manage system access and role permissions (Admin, Manager, Staff).
           </p>
         </div>
@@ -129,22 +129,22 @@ export const Users = () => {
           ]}
         >
           {users.map((u) => (
-            <tr key={u._id} className="hover:bg-slate-50/70 transition-colors">
+            <tr key={u._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
               <td className="px-5 py-3.5">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-slate-100 font-bold text-xs flex items-center justify-center text-slate-700 uppercase">
+                  <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-700 font-bold text-xs flex items-center justify-center text-slate-700 dark:text-slate-300 uppercase">
                     {u.name.charAt(0)}
                   </div>
-                  <span className="font-bold text-slate-900 text-xs">{u.name}</span>
+                  <span className="font-bold text-slate-900 dark:text-white text-xs">{u.name}</span>
                 </div>
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-600">{u.email}</td>
+              <td className="px-5 py-3.5 text-xs text-slate-600 ">{u.email}</td>
               <td className="px-5 py-3.5">
                 <span
                   className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                     u.role === 'ADMIN'
                       ? 'bg-purple-100 text-purple-800'
-                      : 'bg-slate-100 text-slate-700'
+                      : 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
                   }`}
                 >
                   {u.role}
@@ -161,14 +161,14 @@ export const Users = () => {
                   {u.status}
                 </span>
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500 whitespace-nowrap">
+              <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">
                 {new Date(u.createdAt).toLocaleDateString()}
               </td>
               <td className="px-5 py-3.5">
                 {currentUser?.id !== u._id && (
                   <button
                     onClick={() => handleToggleStatus(u)}
-                    className="text-xs font-semibold text-slate-600 hover:text-slate-900 underline"
+                    className="text-xs font-semibold text-slate-600  hover:text-slate-900 dark:text-white underline"
                   >
                     {u.status === 'ACTIVE' ? 'Deactivate' : 'Activate'}
                   </button>
@@ -220,7 +220,7 @@ export const Users = () => {
               { value: 'ADMIN', label: 'ADMIN (Full system control, users, settings)' }
             ]}
           />
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-end gap-3">
             <Button
               type="button"
               variant="secondary"

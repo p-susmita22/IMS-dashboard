@@ -90,11 +90,11 @@ export const Locations = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
             <Building2 className="w-7 h-7 text-emerald-600" />
             Warehouses & Locations
           </h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-500  mt-0.5">
             Physical warehouse locations. Stock is independently tracked and transferred between them.
           </p>
         </div>
@@ -133,15 +133,15 @@ export const Locations = () => {
             return (
               <div
                 key={loc._id}
-                className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between"
+                className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <h3 className="text-base font-bold text-slate-900 leading-tight">
+                      <h3 className="text-base font-bold text-slate-900 dark:text-white leading-tight">
                         {loc.name}
                       </h3>
-                      <span className="font-mono text-xs font-bold text-slate-500 block mt-0.5">
+                      <span className="font-mono text-xs font-bold text-slate-500  block mt-0.5">
                         Code: {loc.code}
                       </span>
                     </div>
@@ -159,16 +159,16 @@ export const Locations = () => {
                     </div>
                   </div>
 
-                  <div className="mt-3 space-y-1.5 text-xs text-slate-500">
+                  <div className="mt-3 space-y-1.5 text-xs text-slate-500 ">
                     {loc.address && (
                       <p className="flex items-start gap-1.5">
-                        <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0 mt-0.5" />
+                        <MapPin className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 shrink-0 mt-0.5" />
                         <span>{loc.address}</span>
                       </p>
                     )}
                     {loc.contactNumber && (
                       <p className="flex items-center gap-1.5">
-                        <Phone className="w-3.5 h-3.5 text-slate-400" />
+                        <Phone className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                         <span>{loc.contactNumber}</span>
                       </p>
                     )}
@@ -176,12 +176,12 @@ export const Locations = () => {
                 </div>
 
                 {/* Warehouse Stock Breakdown */}
-                <div className="mt-5 pt-4 border-t border-slate-100 grid grid-cols-3 gap-2 text-center text-xs">
-                  <div className="bg-slate-50 p-2.5 rounded-xl">
-                    <span className="text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">
+                <div className="mt-5 pt-4 border-t border-slate-100 dark:border-slate-700 grid grid-cols-3 gap-2 text-center text-xs">
+                  <div className="bg-slate-50 dark:bg-slate-800/50 p-2.5 rounded-xl">
+                    <span className="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500 block font-semibold">
                       Total
                     </span>
-                    <strong className="text-base font-bold text-slate-800">
+                    <strong className="text-base font-bold text-slate-800 dark:text-slate-200">
                       {sum.totalStock}
                     </strong>
                   </div>
@@ -242,7 +242,7 @@ export const Locations = () => {
             value={formData.contactNumber}
             onChange={(e) => setFormData({ ...formData, contactNumber: e.target.value })}
           />
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-end gap-3">
             <Button
               type="button"
               variant="secondary"

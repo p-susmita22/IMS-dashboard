@@ -82,7 +82,7 @@ export const ProductDetails = () => {
   if (!product) {
     return (
       <div className="text-center py-16">
-        <p className="text-base text-slate-600">Product not found.</p>
+        <p className="text-base text-slate-600 ">Product not found.</p>
         <Button onClick={() => navigate('/products')} variant="secondary" className="mt-4">
           Back to Products
         </Button>
@@ -97,15 +97,15 @@ export const ProductDetails = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={() => navigate('/products')}
-            className="p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition-colors"
+            className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
           </button>
           <div>
-            <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">
+            <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               {product.name}
             </h1>
-            <div className="flex items-center gap-2 text-xs text-slate-500 mt-0.5">
+            <div className="flex items-center gap-2 text-xs text-slate-500  mt-0.5">
               <span>{product.category}</span>
               {product.brand && <span>• {product.brand}</span>}
             </div>
@@ -134,9 +134,9 @@ export const ProductDetails = () => {
       </div>
 
       {/* Main Product Card */}
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="md:col-span-1">
-          <div className="w-full aspect-square rounded-2xl bg-slate-100 border border-slate-200 overflow-hidden flex items-center justify-center">
+          <div className="w-full aspect-square rounded-2xl bg-slate-100 dark:bg-slate-700 border border-slate-200 dark:border-slate-700 overflow-hidden flex items-center justify-center">
             {product.productImage ? (
               <img
                 src={product.productImage}
@@ -151,21 +151,21 @@ export const ProductDetails = () => {
 
         <div className="md:col-span-3 flex flex-col justify-between">
           <div className="space-y-3">
-            <h2 className="text-xl font-bold text-slate-900">{product.name}</h2>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white">{product.name}</h2>
+            <p className="text-sm text-slate-600  leading-relaxed">
               {product.description || 'No detailed product description provided.'}
             </p>
             <div className="flex flex-wrap gap-4 pt-2 text-xs">
-              <div className="bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl">
-                <span className="text-slate-400 block">Category</span>
-                <span className="font-bold text-slate-800">{product.category}</span>
+              <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl">
+                <span className="text-slate-400 dark:text-slate-500 block">Category</span>
+                <span className="font-bold text-slate-800 dark:text-slate-200">{product.category}</span>
               </div>
-              <div className="bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl">
-                <span className="text-slate-400 block">Brand</span>
-                <span className="font-bold text-slate-800">{product.brand || 'Unbranded'}</span>
+              <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl">
+                <span className="text-slate-400 dark:text-slate-500 block">Brand</span>
+                <span className="font-bold text-slate-800 dark:text-slate-200">{product.brand || 'Unbranded'}</span>
               </div>
-              <div className="bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl">
-                <span className="text-slate-400 block">Status</span>
+              <div className="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl">
+                <span className="text-slate-400 dark:text-slate-500 block">Status</span>
                 <span className="font-bold text-emerald-600">{product.status}</span>
               </div>
             </div>
@@ -175,7 +175,7 @@ export const ProductDetails = () => {
 
       {/* Variants & Location Inventory Breakdown Section */}
       <div className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
           <Layers className="w-5 h-5 text-emerald-600" /> Variants & Multi-Warehouse Stock
         </h3>
 
@@ -183,24 +183,24 @@ export const ProductDetails = () => {
           {product.variants.map((v) => (
             <div
               key={v._id}
-              className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4"
+              className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm p-5 space-y-4"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-100 dark:border-slate-700">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-base font-bold text-slate-900">
+                    <span className="text-base font-bold text-slate-900 dark:text-white">
                       {v.colour} / {v.size}
                     </span>
                     <span className="text-xs px-2.5 py-0.5 rounded-md bg-slate-900 text-white font-mono font-bold">
                       {v.sku}
                     </span>
                     {v.barcode && (
-                      <span className="text-xs text-slate-500 font-mono">
+                      <span className="text-xs text-slate-500  font-mono">
                         Barcode: {v.barcode}
                       </span>
                     )}
                   </div>
-                  <div className="flex items-center gap-3 text-xs text-slate-500 mt-1">
+                  <div className="flex items-center gap-3 text-xs text-slate-500  mt-1">
                     <span>Purchase: <strong>₹{v.purchasePrice}</strong></span>
                     <span>•</span>
                     <span>Selling: <strong>₹{v.sellingPrice}</strong></span>
@@ -226,27 +226,27 @@ export const ProductDetails = () => {
               </div>
 
               {/* Stock Metric Highlights */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50/70 p-3 rounded-xl border border-slate-100 text-center">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 /50 p-3 rounded-xl border border-slate-100 dark:border-slate-700 text-center">
                 <div>
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 ">
                     Physical Stock
                   </span>
-                  <p className="text-lg font-bold text-slate-900">{v.totalStock}</p>
+                  <p className="text-lg font-bold text-slate-900 dark:text-white">{v.totalStock}</p>
                 </div>
                 <div>
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 ">
                     Reserved Stock
                   </span>
                   <p className="text-lg font-bold text-indigo-600">{v.reservedStock}</p>
                 </div>
                 <div>
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 ">
                     Available Stock
                   </span>
                   <p className="text-lg font-extrabold text-emerald-600">{v.availableStock}</p>
                 </div>
                 <div>
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 ">
                     Damaged Stock
                   </span>
                   <p className="text-lg font-bold text-rose-600">{v.damagedStock}</p>
@@ -255,7 +255,7 @@ export const ProductDetails = () => {
 
               {/* Location-wise Breakdown Table */}
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
                   Warehouse Allocations
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -263,19 +263,19 @@ export const ProductDetails = () => {
                     v.locationStock.map((loc, idx) => (
                       <div
                         key={idx}
-                        className="p-3 rounded-xl border border-slate-200 bg-white flex flex-col justify-between"
+                        className="p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 flex flex-col justify-between"
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                            <Building2 className="w-3.5 h-3.5 text-slate-400" />
+                          <span className="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                            <Building2 className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                             {loc.locationName}
                           </span>
-                          <span className="text-[10px] font-mono text-slate-400">
+                          <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500">
                             {loc.locationCode}
                           </span>
                         </div>
-                        <div className="flex items-baseline justify-between text-xs mt-2 pt-2 border-t border-slate-100">
-                          <span className="text-slate-500">Total: {loc.quantity}</span>
+                        <div className="flex items-baseline justify-between text-xs mt-2 pt-2 border-t border-slate-100 dark:border-slate-700">
+                          <span className="text-slate-500 ">Total: {loc.quantity}</span>
                           <span className="text-xs font-bold text-emerald-600">
                             Avail: {loc.availableStock}
                           </span>
@@ -283,7 +283,7 @@ export const ProductDetails = () => {
                       </div>
                     ))
                   ) : (
-                    <p className="text-xs text-slate-400">No warehouse stock allocated yet.</p>
+                    <p className="text-xs text-slate-400 dark:text-slate-500">No warehouse stock allocated yet.</p>
                   )}
                 </div>
               </div>
@@ -302,7 +302,7 @@ export const ProductDetails = () => {
         <div className="space-y-4">
           <div className="p-4 rounded-xl bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
+              <p className="text-xs text-slate-400 dark:text-slate-500 uppercase tracking-wider font-semibold">
                 Permanent Movement Trail
               </p>
               <h4 className="text-base font-bold text-white">
@@ -321,14 +321,14 @@ export const ProductDetails = () => {
           {historyLoading ? (
             <Loader message="Loading audit trail..." />
           ) : !variantAudit || variantAudit.movements.length === 0 ? (
-            <p className="text-center py-8 text-sm text-slate-500">
+            <p className="text-center py-8 text-sm text-slate-500 ">
               No stock movements recorded for this variant.
             </p>
           ) : (
-            <div className="overflow-x-auto rounded-xl border border-slate-200">
+            <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
               <table className="w-full text-left border-collapse text-xs">
                 <thead>
-                  <tr className="border-b border-slate-200 bg-slate-50 text-slate-600 font-bold uppercase">
+                  <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-slate-600  font-bold uppercase">
                     <th className="p-3">Date</th>
                     <th className="p-3">Operation</th>
                     <th className="p-3 text-right">Quantity</th>
@@ -339,7 +339,7 @@ export const ProductDetails = () => {
                     <th className="p-3">Reference / Notes</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 font-medium">
+                <tbody className="divide-y divide-slate-100 dark:divide-slate-700 font-medium">
                   {variantAudit.movements.map((m) => {
                     const isPlus = [
                       'STOCK_IN',
@@ -352,8 +352,8 @@ export const ProductDetails = () => {
                     ].includes(m.movementType);
 
                     return (
-                      <tr key={m._id} className="hover:bg-slate-50">
-                        <td className="p-3 whitespace-nowrap text-slate-500">
+                      <tr key={m._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 dark:bg-slate-800/50">
+                        <td className="p-3 whitespace-nowrap text-slate-500 ">
                           {new Date(m.createdAt).toLocaleDateString()} {new Date(m.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </td>
                         <td className="p-3">
@@ -373,22 +373,22 @@ export const ProductDetails = () => {
                             {m.movementType}
                           </span>
                         </td>
-                        <td className={`p-3 text-right font-extrabold text-sm ${isPlus ? 'text-emerald-600' : isMinus ? 'text-rose-600' : 'text-slate-800'}`}>
+                        <td className={`p-3 text-right font-extrabold text-sm ${isPlus ? 'text-emerald-600' : isMinus ? 'text-rose-600' : 'text-slate-800 dark:text-slate-200'}`}>
                           {isPlus ? `+${m.quantity}` : isMinus ? `-${m.quantity}` : m.quantity}
                         </td>
-                        <td className="p-3 text-right text-slate-500 font-mono">
+                        <td className="p-3 text-right text-slate-500  font-mono">
                           {m.previousQuantity}
                         </td>
-                        <td className="p-3 text-right text-slate-900 font-bold font-mono">
+                        <td className="p-3 text-right text-slate-900 dark:text-white font-bold font-mono">
                           {m.newQuantity}
                         </td>
-                        <td className="p-3 whitespace-nowrap text-slate-700">
+                        <td className="p-3 whitespace-nowrap text-slate-700 dark:text-slate-300">
                           {m.locationId ? m.locationId.name : '-'}
                         </td>
-                        <td className="p-3 whitespace-nowrap text-slate-600">
+                        <td className="p-3 whitespace-nowrap text-slate-600 ">
                           {m.performedBy?.name || 'System'}
                         </td>
-                        <td className="p-3 text-slate-500 max-w-xs truncate" title={m.notes || m.reason}>
+                        <td className="p-3 text-slate-500  max-w-xs truncate" title={m.notes || m.reason}>
                           {m.notes || m.reason || m.referenceId || '-'}
                         </td>
                       </tr>

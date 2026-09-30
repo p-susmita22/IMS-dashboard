@@ -105,11 +105,11 @@ export const Reports = () => {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
             <BarChart3 className="w-7 h-7 text-emerald-600" />
             Inventory & Financial Reports
           </h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-500  mt-0.5">
             Audit stock levels, sales turnover, purchase volumes, and permanent stock trails.
           </p>
         </div>
@@ -150,7 +150,7 @@ export const Reports = () => {
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all ${
                 activeReport === r.id
                   ? 'bg-slate-900 text-white shadow-md'
-                  : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                  : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700'
               }`}
             >
               <Icon className="w-4 h-4 shrink-0" />
@@ -161,15 +161,15 @@ export const Reports = () => {
       </div>
 
       {/* Filters Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-wrap gap-3 items-center">
-        <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
+      <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-wrap gap-3 items-center">
+        <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 ">
           <Filter className="w-4 h-4" /> Filters:
         </div>
 
         <select
           value={locationId}
           onChange={(e) => setLocationId(e.target.value)}
-          className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-700"
+          className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300"
         >
           <option value="">All Warehouses</option>
           {locations.map((l) => (
@@ -182,21 +182,21 @@ export const Reports = () => {
         {activeReport !== 'stock' && (
           <>
             <div className="flex items-center gap-1.5">
-              <span className="text-xs text-slate-400">From:</span>
+              <span className="text-xs text-slate-400 dark:text-slate-500">From:</span>
               <input
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
-                className="rounded-xl border border-slate-300 bg-white px-2.5 py-1.5 text-xs text-slate-700"
+                className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2.5 py-1.5 text-xs text-slate-700 dark:text-slate-300"
               />
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="text-xs text-slate-400">To:</span>
+              <span className="text-xs text-slate-400 dark:text-slate-500">To:</span>
               <input
                 type="date"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
-                className="rounded-xl border border-slate-300 bg-white px-2.5 py-1.5 text-xs text-slate-700"
+                className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-2.5 py-1.5 text-xs text-slate-700 dark:text-slate-300"
               />
             </div>
           </>
@@ -206,7 +206,7 @@ export const Reports = () => {
           <select
             value={movementType}
             onChange={(e) => setMovementType(e.target.value)}
-            className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-700"
+            className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300"
           >
             <option value="">All Movement Types</option>
             <option value="STOCK_IN">STOCK_IN</option>
@@ -261,13 +261,13 @@ export const Reports = () => {
               ]}
             >
               {data.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50/70">
-                  <td className="px-5 py-3.5 font-bold text-slate-900 text-xs">{row.productName}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-500">{row.category}</td>
-                  <td className="px-5 py-3.5 font-mono font-bold text-slate-700 text-xs">{row.sku}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600">{row.colour} / {row.size}</td>
-                  <td className="px-5 py-3.5 text-xs font-medium text-slate-700">{row.location}</td>
-                  <td className="px-5 py-3.5 text-xs font-semibold text-slate-800">{row.totalStock}</td>
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+                  <td className="px-5 py-3.5 font-bold text-slate-900 dark:text-white text-xs">{row.productName}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500 ">{row.category}</td>
+                  <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-slate-300 text-xs">{row.sku}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.colour} / {row.size}</td>
+                  <td className="px-5 py-3.5 text-xs font-medium text-slate-700 dark:text-slate-300">{row.location}</td>
+                  <td className="px-5 py-3.5 text-xs font-semibold text-slate-800 dark:text-slate-200">{row.totalStock}</td>
                   <td className="px-5 py-3.5 text-xs font-semibold text-purple-700">{row.reservedStock}</td>
                   <td className="px-5 py-3.5 text-sm font-extrabold text-emerald-700">{row.availableStock}</td>
                   <td className="px-5 py-3.5 text-xs text-rose-600 font-semibold">{row.damagedStock}</td>
@@ -305,17 +305,17 @@ export const Reports = () => {
               ]}
             >
               {data.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50/70">
-                  <td className="px-5 py-3.5 text-xs text-slate-500 whitespace-nowrap">{row.date}</td>
-                  <td className="px-5 py-3.5 font-mono font-bold text-slate-900 text-xs">{row.orderNumber}</td>
-                  <td className="px-5 py-3.5 text-xs font-bold text-slate-800">{row.customerName}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-900 font-medium">{row.productName}</td>
-                  <td className="px-5 py-3.5 font-mono font-bold text-slate-700 text-xs">{row.sku}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600">{row.location}</td>
-                  <td className="px-5 py-3.5 text-xs font-extrabold text-slate-900">{row.quantity}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600">₹{row.price}</td>
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+                  <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">{row.date}</td>
+                  <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">{row.orderNumber}</td>
+                  <td className="px-5 py-3.5 text-xs font-bold text-slate-800 dark:text-slate-200">{row.customerName}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-900 dark:text-white font-medium">{row.productName}</td>
+                  <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-slate-300 text-xs">{row.sku}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.location}</td>
+                  <td className="px-5 py-3.5 text-xs font-extrabold text-slate-900 dark:text-white">{row.quantity}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 ">₹{row.price}</td>
                   <td className="px-5 py-3.5 text-xs font-black text-indigo-950">₹{(row.total || row.totalAmount || 0).toLocaleString()}</td>
-                  <td className="px-5 py-3.5 text-[10px] font-bold text-slate-600">{row.status}</td>
+                  <td className="px-5 py-3.5 text-[10px] font-bold text-slate-600 ">{row.status}</td>
                 </tr>
               ))}
             </Table>
@@ -336,16 +336,16 @@ export const Reports = () => {
               ]}
             >
               {data.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50/70">
-                  <td className="px-5 py-3.5 text-xs text-slate-500 whitespace-nowrap">{row.date}</td>
-                  <td className="px-5 py-3.5 text-xs font-bold text-slate-900">{row.productName}</td>
-                  <td className="px-5 py-3.5 font-mono font-bold text-slate-700 text-xs">{row.sku}</td>
-                  <td className="px-5 py-3.5 text-xs font-semibold text-slate-800">{row.vendor}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600">{row.location}</td>
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+                  <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">{row.date}</td>
+                  <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">{row.productName}</td>
+                  <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-slate-300 text-xs">{row.sku}</td>
+                  <td className="px-5 py-3.5 text-xs font-semibold text-slate-800 dark:text-slate-200">{row.vendor}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.location}</td>
                   <td className="px-5 py-3.5 text-xs font-extrabold text-emerald-700">+{row.quantity}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600">₹{row.purchasePrice}</td>
-                  <td className="px-5 py-3.5 text-xs font-bold text-slate-900">₹{(row.totalAmount || 0).toLocaleString()}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-500">{row.performedBy}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 ">₹{row.purchasePrice}</td>
+                  <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">₹{(row.totalAmount || 0).toLocaleString()}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500 ">{row.performedBy}</td>
                 </tr>
               ))}
             </Table>
@@ -367,11 +367,11 @@ export const Reports = () => {
               ]}
             >
               {data.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50/70">
-                  <td className="px-5 py-3.5 text-xs text-slate-500 whitespace-nowrap">{row.date}</td>
-                  <td className="px-5 py-3.5 text-xs font-bold text-slate-900">{row.productName}</td>
-                  <td className="px-5 py-3.5 font-mono font-bold text-slate-700 text-xs">{row.sku}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600">{row.location}</td>
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+                  <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">{row.date}</td>
+                  <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">{row.productName}</td>
+                  <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-slate-300 text-xs">{row.sku}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.location}</td>
                   <td className="px-5 py-3.5">
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded ${
@@ -389,11 +389,11 @@ export const Reports = () => {
                       {row.movementType}
                     </span>
                   </td>
-                  <td className="px-5 py-3.5 text-xs font-extrabold text-slate-900">{row.quantity}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-500 font-mono">{row.previousQuantity}</td>
-                  <td className="px-5 py-3.5 text-xs font-black text-slate-900 font-mono">{row.newQuantity}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-500 max-w-xs truncate">{row.reason}</td>
-                  <td className="px-5 py-3.5 text-xs text-slate-600">{row.user}</td>
+                  <td className="px-5 py-3.5 text-xs font-extrabold text-slate-900 dark:text-white">{row.quantity}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500  font-mono">{row.previousQuantity}</td>
+                  <td className="px-5 py-3.5 text-xs font-black text-slate-900 dark:text-white font-mono">{row.newQuantity}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-500  max-w-xs truncate">{row.reason}</td>
+                  <td className="px-5 py-3.5 text-xs text-slate-600 ">{row.user}</td>
                 </tr>
               ))}
             </Table>

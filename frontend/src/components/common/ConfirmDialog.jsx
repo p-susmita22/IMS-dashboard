@@ -21,11 +21,11 @@ export const ConfirmDialog = ({
           <AlertTriangle className="w-5 h-5" />
         </div>
         <div className="flex-1">
-          <h4 className="text-base font-bold text-slate-900 mb-1">{title}</h4>
-          <p className="text-sm text-slate-600">{message}</p>
+          <h4 className="text-base font-bold text-slate-900 dark:text-white mb-1">{title}</h4>
+          <p className="text-sm text-slate-600 ">{message}</p>
         </div>
       </div>
-      <div className="mt-6 flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+      <div className="mt-6 flex items-center justify-end gap-3 pt-3 border-t border-slate-100 dark:border-slate-700">
         <Button variant="secondary" onClick={onClose} disabled={loading}>
           {cancelText}
         </Button>

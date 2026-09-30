@@ -115,11 +115,11 @@ export const Vendors = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
             <Users2 className="w-7 h-7 text-indigo-600" />
             Wholesale Suppliers & Vendors
           </h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-500  mt-0.5">
             Suppliers for restocking. Products can be sourced from multiple vendors over time.
           </p>
         </div>
@@ -150,11 +150,11 @@ export const Vendors = () => {
           {vendors.map((v) => (
             <div
               key={v._id}
-              className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between"
+              className="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-base font-bold text-slate-900 leading-tight">
+                  <h3 className="text-base font-bold text-slate-900 dark:text-white leading-tight">
                     {v.name}
                   </h3>
                   <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded">
@@ -162,37 +162,37 @@ export const Vendors = () => {
                   </span>
                 </div>
                 {v.contactPerson && (
-                  <p className="text-xs text-slate-500 mt-1 font-medium">
+                  <p className="text-xs text-slate-500  mt-1 font-medium">
                     Contact: {v.contactPerson}
                   </p>
                 )}
 
-                <div className="mt-4 space-y-2 text-xs text-slate-600">
+                <div className="mt-4 space-y-2 text-xs text-slate-600 ">
                   {v.phone && (
                     <div className="flex items-center gap-2">
-                      <Phone className="w-3.5 h-3.5 text-slate-400" />
+                      <Phone className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                       <span>{v.phone}</span>
                     </div>
                   )}
                   {v.email && (
                     <div className="flex items-center gap-2">
-                      <Mail className="w-3.5 h-3.5 text-slate-400" />
+                      <Mail className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                       <span>{v.email}</span>
                     </div>
                   )}
                   {v.gstNumber && (
-                    <div className="text-[11px] font-mono text-slate-500">
+                    <div className="text-[11px] font-mono text-slate-500 ">
                       GST: <strong>{v.gstNumber}</strong>
                     </div>
                   )}
                   {v.address && (
-                    <p className="text-[11px] text-slate-500 truncate">{v.address}</p>
+                    <p className="text-[11px] text-slate-500  truncate">{v.address}</p>
                   )}
                 </div>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-[11px] text-slate-400">
+              <div className="mt-5 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+                <span className="text-[11px] text-slate-400 dark:text-slate-500">
                   Added {new Date(v.createdAt).toLocaleDateString()}
                 </span>
                 <div className="flex gap-2">
@@ -229,14 +229,14 @@ export const Vendors = () => {
         {historyLoading ? (
           <Loader message="Loading purchase history..." />
         ) : !selectedVendorHistory || selectedVendorHistory.purchases.length === 0 ? (
-          <p className="text-center py-8 text-sm text-slate-500">
+          <p className="text-center py-8 text-sm text-slate-500 ">
             No stock purchases recorded from this vendor yet.
           </p>
         ) : (
-          <div className="overflow-x-auto rounded-xl border border-slate-200">
+          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
             <table className="w-full text-left border-collapse text-xs">
               <thead>
-                <tr className="border-b border-slate-200 bg-slate-50 text-slate-600 font-bold uppercase">
+                <tr className="border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 text-slate-600  font-bold uppercase">
                   <th className="p-3">Date</th>
                   <th className="p-3">Product</th>
                   <th className="p-3">SKU</th>
@@ -246,25 +246,25 @@ export const Vendors = () => {
                   <th className="p-3 text-right">Total (₹)</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 font-medium">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-700 font-medium">
                 {selectedVendorHistory.purchases.map((p) => (
-                  <tr key={p._id} className="hover:bg-slate-50">
-                    <td className="p-3 whitespace-nowrap text-slate-500">
+                  <tr key={p._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 dark:bg-slate-800/50">
+                    <td className="p-3 whitespace-nowrap text-slate-500 ">
                       {new Date(p.createdAt).toLocaleDateString()}
                     </td>
-                    <td className="p-3 font-bold text-slate-900">
+                    <td className="p-3 font-bold text-slate-900 dark:text-white">
                       {p.variantId?.productId?.name || 'Product'}
                     </td>
-                    <td className="p-3 font-mono font-bold text-slate-700">
+                    <td className="p-3 font-mono font-bold text-slate-700 dark:text-slate-300">
                       {p.variantId?.sku}
                     </td>
-                    <td className="p-3 text-slate-600">
+                    <td className="p-3 text-slate-600 ">
                       {p.locationId?.name}
                     </td>
-                    <td className="p-3 text-right font-extrabold text-slate-900">
+                    <td className="p-3 text-right font-extrabold text-slate-900 dark:text-white">
                       +{p.quantity}
                     </td>
-                    <td className="p-3 text-right text-slate-600">
+                    <td className="p-3 text-right text-slate-600 ">
                       ₹{p.unitPrice || 0}
                     </td>
                     <td className="p-3 text-right font-bold text-emerald-700">
@@ -326,7 +326,7 @@ export const Vendors = () => {
             value={formData.address}
             onChange={(e) => setFormData({ ...formData, address: e.target.value })}
           />
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-end gap-3">
             <Button
               type="button"
               variant="secondary"

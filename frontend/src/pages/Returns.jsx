@@ -114,11 +114,11 @@ export const Returns = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
             <RotateCcw className="w-7 h-7 text-purple-600" />
             Customer Returns
           </h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-500  mt-0.5">
             Log returned stock. GOOD condition returns to available stock; DAMAGED is isolated.
           </p>
         </div>
@@ -158,28 +158,28 @@ export const Returns = () => {
           ]}
         >
           {returns.map((r) => (
-            <tr key={r._id} className="hover:bg-slate-50/70 transition-colors">
-              <td className="px-5 py-3.5 font-mono font-bold text-slate-900 text-xs">
+            <tr key={r._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
+              <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                 {r.returnNumber}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500 whitespace-nowrap">
+              <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">
                 {new Date(r.createdAt).toLocaleDateString()}
               </td>
-              <td className="px-5 py-3.5 font-bold text-slate-800 text-xs">
+              <td className="px-5 py-3.5 font-bold text-slate-800 dark:text-slate-200 text-xs">
                 {r.customerName}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-600">
+              <td className="px-5 py-3.5 text-xs text-slate-600 ">
                 {r.locationId?.name}
               </td>
               <td className="px-5 py-3.5">
-                <span className="text-xs font-bold text-slate-900 block">
+                <span className="text-xs font-bold text-slate-900 dark:text-white block">
                   {r.variantId?.productId?.name || 'Product'}
                 </span>
-                <span className="text-[11px] font-mono text-slate-500 font-bold">
+                <span className="text-[11px] font-mono text-slate-500  font-bold">
                   {r.variantId?.sku} ({r.variantId?.colour}/{r.variantId?.size})
                 </span>
               </td>
-              <td className="px-5 py-3.5 text-sm font-extrabold text-slate-900">
+              <td className="px-5 py-3.5 text-sm font-extrabold text-slate-900 dark:text-white">
                 {r.quantity} units
               </td>
               <td className="px-5 py-3.5">
@@ -193,10 +193,10 @@ export const Returns = () => {
                   </span>
                 )}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-600">
+              <td className="px-5 py-3.5 text-xs text-slate-600 ">
                 {r.reason}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500">
+              <td className="px-5 py-3.5 text-xs text-slate-500 ">
                 {r.handledBy?.name || 'Staff'}
               </td>
             </tr>
@@ -293,7 +293,7 @@ export const Returns = () => {
             onChange={(e) => setNotes(e.target.value)}
           />
 
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-end gap-3">
             <Button
               type="button"
               variant="secondary"

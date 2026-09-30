@@ -113,11 +113,11 @@ export const Transfers = () => {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
             <ArrowLeftRight className="w-7 h-7 text-blue-600" />
             Stock Transfers
           </h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-500  mt-0.5">
             Inter-warehouse stock movements. Validates source stock and logs dual audit records.
           </p>
         </div>
@@ -157,11 +157,11 @@ export const Transfers = () => {
           ]}
         >
           {transfers.map((t) => (
-            <tr key={t._id} className="hover:bg-slate-50/70 transition-colors">
-              <td className="px-5 py-3.5 font-mono font-bold text-slate-900 text-xs">
+            <tr key={t._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
+              <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                 {t.transferNumber}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500 whitespace-nowrap">
+              <td className="px-5 py-3.5 text-xs text-slate-500  whitespace-nowrap">
                 {new Date(t.createdAt).toLocaleDateString()}
               </td>
               <td className="px-5 py-3.5 text-xs font-semibold text-rose-700">
@@ -171,14 +171,14 @@ export const Transfers = () => {
                 {t.toLocationId?.name}
               </td>
               <td className="px-5 py-3.5">
-                <span className="text-xs font-bold text-slate-900 block">
+                <span className="text-xs font-bold text-slate-900 dark:text-white block">
                   {t.variantId?.productId?.name || 'Product'}
                 </span>
-                <span className="text-[11px] font-mono text-slate-500 font-bold">
+                <span className="text-[11px] font-mono text-slate-500  font-bold">
                   {t.variantId?.sku} ({t.variantId?.colour}/{t.variantId?.size})
                 </span>
               </td>
-              <td className="px-5 py-3.5 text-sm font-extrabold text-slate-900">
+              <td className="px-5 py-3.5 text-sm font-extrabold text-slate-900 dark:text-white">
                 {t.quantity} units
               </td>
               <td className="px-5 py-3.5">
@@ -186,10 +186,10 @@ export const Transfers = () => {
                   {t.status}
                 </span>
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-600">
+              <td className="px-5 py-3.5 text-xs text-slate-600 ">
                 {t.performedBy?.name || 'System'}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500 max-w-xs truncate">
+              <td className="px-5 py-3.5 text-xs text-slate-500  max-w-xs truncate">
                 {t.notes || '-'}
               </td>
             </tr>
@@ -267,7 +267,7 @@ export const Transfers = () => {
             onChange={(e) => setNotes(e.target.value)}
           />
 
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-end gap-3">
             <Button
               type="button"
               variant="secondary"

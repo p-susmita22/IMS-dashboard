@@ -35,17 +35,17 @@ export const Modal = ({
 
       <div className="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
         <div
-          className={`relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 w-full ${maxWidth} animate-in fade-in zoom-in-95 duration-200 border border-slate-100`}
+          className={`relative transform overflow-hidden rounded-2xl bg-white dark:bg-slate-800 text-left shadow-2xl transition-all sm:my-8 w-full ${maxWidth} animate-in fade-in zoom-in-95 duration-200 border border-slate-100 dark:border-slate-700`}
         >
           {/* Header */}
           {(title || showClose) && (
-            <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
-              <h3 className="text-base font-bold text-slate-900">{title}</h3>
+            <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-700 px-6 py-4">
+              <h3 className="text-base font-bold text-slate-900 dark:text-white">{title}</h3>
               {showClose && (
                 <button
                   type="button"
                   onClick={onClose}
-                  className="rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+                  className="rounded-lg p-1 text-slate-400 dark:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 hover:text-slate-600  transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>

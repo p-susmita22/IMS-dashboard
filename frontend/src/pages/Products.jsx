@@ -267,10 +267,10 @@ export const Products = () => {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Products & Variants
           </h1>
-          <p className="text-sm text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-500  mt-0.5">
             Manage catalog, automated SKUs, and cross-warehouse inventory.
           </p>
         </div>
@@ -287,7 +287,7 @@ export const Products = () => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row gap-3 items-center justify-between">
+      <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col md:flex-row gap-3 items-center justify-between">
         <form onSubmit={handleSearchSubmit} className="flex-1 w-full flex gap-2">
           <Input
             placeholder="Search by product, category, brand..."
@@ -305,7 +305,7 @@ export const Products = () => {
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-700"
+            className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300"
           >
             <option value="">All Categories</option>
             {categories.map((cat) => (
@@ -318,7 +318,7 @@ export const Products = () => {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-xs font-medium text-slate-700"
+            className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300"
           >
             <option value="">All Stock Statuses</option>
             <option value="IN_STOCK">In Stock</option>
@@ -355,10 +355,10 @@ export const Products = () => {
             ]}
           >
             {variantRows.map(({ product, variant }) => (
-              <tr key={variant._id} className="hover:bg-slate-50/70 transition-colors">
+              <tr key={variant._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
                 <td className="px-5 py-3.5">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-slate-100 overflow-hidden border border-slate-200 shrink-0 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700 overflow-hidden border border-slate-200 dark:border-slate-700 shrink-0 flex items-center justify-center">
                       {product.productImage ? (
                         <img
                           src={product.productImage}
@@ -366,33 +366,33 @@ export const Products = () => {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <Package className="w-5 h-5 text-slate-400" />
+                        <Package className="w-5 h-5 text-slate-400 dark:text-slate-500" />
                       )}
                     </div>
                     <div>
-                      <span className="font-bold text-slate-900 block leading-tight">
+                      <span className="font-bold text-slate-900 dark:text-white block leading-tight">
                         {product.name}
                       </span>
-                      <span className="text-xs text-slate-400">{product.category}</span>
+                      <span className="text-xs text-slate-400 dark:text-slate-500">{product.category}</span>
                     </div>
                   </div>
                 </td>
-                <td className="px-5 py-3.5 font-mono font-bold text-slate-800 text-xs">
+                <td className="px-5 py-3.5 font-mono font-bold text-slate-800 dark:text-slate-200 text-xs">
                   {variant.sku}
                 </td>
-                <td className="px-5 py-3.5 text-xs font-semibold text-slate-600">
+                <td className="px-5 py-3.5 text-xs font-semibold text-slate-600 ">
                   {variant.colour} / {variant.size}
                 </td>
-                <td className="px-5 py-3.5 text-xs font-bold text-slate-900">
+                <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">
                   ₹{variant.sellingPrice}
                 </td>
-                <td className="px-5 py-3.5 text-xs font-semibold text-slate-700">
+                <td className="px-5 py-3.5 text-xs font-semibold text-slate-700 dark:text-slate-300">
                   {variant.stock.total}
                 </td>
-                <td className="px-5 py-3.5 text-xs font-semibold text-slate-500">
+                <td className="px-5 py-3.5 text-xs font-semibold text-slate-500 ">
                   {variant.stock.reserved}
                 </td>
-                <td className="px-5 py-3.5 text-sm font-extrabold text-slate-900">
+                <td className="px-5 py-3.5 text-sm font-extrabold text-slate-900 dark:text-white">
                   {variant.stock.available}
                 </td>
                 <td className="px-5 py-3.5">
@@ -454,10 +454,10 @@ export const Products = () => {
             <div
               key={variant._id}
               onClick={() => navigate(`/products/${product._id}`)}
-              className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm active:bg-slate-50 transition-colors"
+              className="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm active:bg-slate-50 dark:bg-slate-800/50 transition-colors"
             >
               <div className="flex items-start gap-3">
-                <div className="w-12 h-12 rounded-xl bg-slate-100 overflow-hidden border border-slate-200 shrink-0 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-700 overflow-hidden border border-slate-200 dark:border-slate-700 shrink-0 flex items-center justify-center">
                   {product.productImage ? (
                     <img
                       src={product.productImage}
@@ -465,12 +465,12 @@ export const Products = () => {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <Package className="w-6 h-6 text-slate-400" />
+                    <Package className="w-6 h-6 text-slate-400 dark:text-slate-500" />
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-1">
-                    <span className="font-bold text-slate-900 text-sm truncate">
+                    <span className="font-bold text-slate-900 dark:text-white text-sm truncate">
                       {product.name}
                     </span>
                     <StockStatusBadge
@@ -478,29 +478,29 @@ export const Products = () => {
                       minimumStock={variant.minimumStockLevel}
                     />
                   </div>
-                  <div className="text-xs text-slate-500 font-mono font-bold mt-0.5">
+                  <div className="text-xs text-slate-500  font-mono font-bold mt-0.5">
                     {variant.sku}
                   </div>
-                  <div className="flex items-center gap-2 mt-1 text-xs text-slate-600">
+                  <div className="flex items-center gap-2 mt-1 text-xs text-slate-600 ">
                     <span>{variant.colour} / {variant.size}</span>
                     <span>•</span>
-                    <span className="font-bold text-slate-900">₹{variant.sellingPrice}</span>
+                    <span className="font-bold text-slate-900 dark:text-white">₹{variant.sellingPrice}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs">
                 <div className="flex items-center gap-3">
-                  <span className="text-slate-500">Physical: <strong>{variant.stock.total}</strong></span>
-                  <span className="text-slate-500">Reserved: <strong>{variant.stock.reserved}</strong></span>
+                  <span className="text-slate-500 ">Physical: <strong>{variant.stock.total}</strong></span>
+                  <span className="text-slate-500 ">Reserved: <strong>{variant.stock.reserved}</strong></span>
                 </div>
-                <div className="font-bold text-slate-900">
+                <div className="font-bold text-slate-900 dark:text-white">
                   Available: <span className="text-emerald-600 font-extrabold text-sm">{variant.stock.available}</span>
                 </div>
               </div>
               
               {(isAdmin || isStaff) && (
-                <div className="mt-3 pt-3 border-t border-slate-100 flex items-center gap-2">
+                <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center gap-2">
                   <Button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -574,11 +574,11 @@ export const Products = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-slate-700">Default Warehouse (Optional)</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Default Warehouse (Optional)</label>
               <select
                 value={formData.defaultLocation}
                 onChange={(e) => setFormData({ ...formData, defaultLocation: e.target.value })}
-                className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
               >
                 <option value="">Select Location</option>
                 {locations.map((l) => (
@@ -588,11 +588,11 @@ export const Products = () => {
             </div>
             
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-slate-700">Default Vendor (Optional)</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Default Vendor (Optional)</label>
               <select
                 value={formData.defaultVendor}
                 onChange={(e) => setFormData({ ...formData, defaultVendor: e.target.value })}
-                className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
               >
                 <option value="">Select Vendor</option>
                 {vendors.map((v) => (
@@ -603,9 +603,9 @@ export const Products = () => {
           </div>
 
           {/* Variants Section */}
-          <div className="pt-3 border-t border-slate-100">
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-700">
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                 Product Variants (SKUs will auto-generate)
               </label>
               <button
@@ -621,11 +621,11 @@ export const Products = () => {
               {formData.variants.map((v, idx) => (
                 <div
                   key={idx}
-                  className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs"
+                  className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-xs"
                 >
                   <div className="grid grid-cols-5 gap-2 items-end">
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-700">
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                         Size <span className="text-rose-500">*</span>
                       </label>
                       <input
@@ -634,12 +634,12 @@ export const Products = () => {
                         value={v.size}
                         required
                         onChange={(e) => handleVariantChange(idx, 'size', e.target.value)}
-                        className="w-full p-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                        className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-700">
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                         Colour <span className="text-rose-500">*</span>
                       </label>
                       <input
@@ -648,12 +648,12 @@ export const Products = () => {
                         value={v.colour}
                         required
                         onChange={(e) => handleVariantChange(idx, 'colour', e.target.value)}
-                        className="w-full p-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                        className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-700">
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                         Purchase (₹) <span className="text-rose-500">*</span>
                       </label>
                       <input
@@ -662,12 +662,12 @@ export const Products = () => {
                         value={v.purchasePrice}
                         required
                         onChange={(e) => handleVariantChange(idx, 'purchasePrice', e.target.value)}
-                        className="w-full p-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                        className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-700">
+                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                         Selling (₹) <span className="text-rose-500">*</span>
                       </label>
                       <input
@@ -676,13 +676,13 @@ export const Products = () => {
                         value={v.sellingPrice}
                         required
                         onChange={(e) => handleVariantChange(idx, 'sellingPrice', e.target.value)}
-                        className="w-full p-2 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                        className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                       />
                     </div>
 
                     <div className="flex flex-col gap-1">
                       <div className="flex items-center justify-between">
-                        <label className="text-xs font-semibold text-slate-700">Initial Qty</label>
+                        <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Initial Qty</label>
                         {formData.variants.length > 1 && (
                           <button
                             type="button"
@@ -699,7 +699,7 @@ export const Products = () => {
                         placeholder="0"
                         value={v.initialStock}
                         onChange={(e) => handleVariantChange(idx, 'initialStock', e.target.value)}
-                        className="w-full p-2 rounded-lg border border-slate-300 bg-emerald-50/50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                        className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-emerald-50/50 focus:bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                       />
                     </div>
                   </div>
@@ -708,7 +708,7 @@ export const Products = () => {
             </div>
           </div>
 
-          <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+          <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100 dark:border-slate-700">
             <Button
               type="button"
               variant="secondary"
@@ -766,11 +766,11 @@ export const Products = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-700">Default Warehouse (Optional)</label>
+                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Default Warehouse (Optional)</label>
                 <select
                   value={editData.defaultLocation}
                   onChange={(e) => setEditData({ ...editData, defaultLocation: e.target.value })}
-                  className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                  className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                 >
                   <option value="">Select Location</option>
                   {locations.map((l) => (
@@ -780,11 +780,11 @@ export const Products = () => {
               </div>
               
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-700">Default Vendor (Optional)</label>
+                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Default Vendor (Optional)</label>
                 <select
                   value={editData.defaultVendor}
                   onChange={(e) => setEditData({ ...editData, defaultVendor: e.target.value })}
-                  className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-700 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                  className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                 >
                   <option value="">Select Vendor</option>
                   {vendors.map((v) => (
@@ -795,8 +795,8 @@ export const Products = () => {
             </div>
 
             {/* Variant Details */}
-            <div className="pt-3 border-t border-slate-100">
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-2">
+            <div className="pt-3 border-t border-slate-100 dark:border-slate-700">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 block mb-2">
                 Variant Details
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">
@@ -835,7 +835,7 @@ export const Products = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100 mt-4">
+            <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100 dark:border-slate-700 mt-4">
               <Button
                 type="button"
                 variant="secondary"

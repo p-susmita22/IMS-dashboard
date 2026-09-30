@@ -146,26 +146,26 @@ export const CreateOrder = () => {
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate('/orders')}
-          className="p-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition-colors"
+          className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
             <ShoppingCart className="w-7 h-7 text-indigo-600" />
             Create Wholesale Order
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500">
+          <p className="text-xs sm:text-sm text-slate-500 ">
             Orders begin in NEW state. Stock will be reserved upon confirmation.
           </p>
         </div>
       </div>
 
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8">
+      <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm p-6 sm:p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Customer Information */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-3">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-3">
               Customer & Delivery Details
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -210,9 +210,9 @@ export const CreateOrder = () => {
           </div>
 
           {/* Products List Section */}
-          <div className="pt-4 border-t border-slate-100">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                 Order Items
               </h3>
               <button
@@ -232,14 +232,14 @@ export const CreateOrder = () => {
                 return (
                   <div
                     key={idx}
-                    className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center gap-3"
+                    className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center gap-3"
                   >
                     <div className="flex-1">
                       <select
                         value={item.variantId}
                         required
                         onChange={(e) => handleVariantChange(idx, e.target.value)}
-                        className="w-full rounded-xl border border-slate-300 bg-white p-2.5 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                        className="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 p-2.5 text-xs font-medium text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-900"
                       >
                         <option value="" disabled>
                           -- Choose Product Variant --
@@ -263,7 +263,7 @@ export const CreateOrder = () => {
                           onChange={(e) =>
                             handleFieldChange(idx, 'quantity', e.target.value)
                           }
-                          className="w-full rounded-xl border border-slate-300 bg-white p-2.5 text-xs font-bold text-slate-800 text-center"
+                          className="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 p-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 text-center"
                         />
                       </div>
 
@@ -277,11 +277,11 @@ export const CreateOrder = () => {
                           onChange={(e) =>
                             handleFieldChange(idx, 'price', e.target.value)
                           }
-                          className="w-full rounded-xl border border-slate-300 bg-white p-2.5 text-xs font-bold text-slate-800 text-center"
+                          className="w-full rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 p-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 text-center"
                         />
                       </div>
 
-                      <div className="w-28 text-right font-extrabold text-sm text-slate-900 pr-1">
+                      <div className="w-28 text-right font-extrabold text-sm text-slate-900 dark:text-white pr-1">
                         ₹{lineTotal.toLocaleString()}
                       </div>
 
@@ -302,7 +302,7 @@ export const CreateOrder = () => {
 
             {/* Total Calculation Display */}
             <div className="mt-4 p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
-              <span className="text-sm font-bold text-slate-700">Total Order Amount:</span>
+              <span className="text-sm font-bold text-slate-700 dark:text-slate-300">Total Order Amount:</span>
               <span className="text-xl font-black text-indigo-950">
                 ₹{totalOrderAmount.toLocaleString()}
               </span>
@@ -317,7 +317,7 @@ export const CreateOrder = () => {
             onChange={(e) => setNotes(e.target.value)}
           />
 
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-end gap-3">
             <Button
               type="button"
               variant="secondary"
