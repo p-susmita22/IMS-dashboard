@@ -301,7 +301,7 @@ export const CreateOrder = () => {
             </div>
 
             {/* Total Calculation Display */}
-            <div className="mt-4 p-4 rounded-2xl bg-indigo-50/50 dark:bg-indigo-900/30 border border-indigo-100 flex items-center justify-between">
+            <div className="mt-4 p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-900 border border-indigo-100 flex items-center justify-between">
               <span className="text-sm font-bold text-slate-700 dark:text-white">Total Order Amount:</span>
               <span className="text-xl font-black text-indigo-950 dark:text-white">
                 ₹{totalOrderAmount.toLocaleString()}

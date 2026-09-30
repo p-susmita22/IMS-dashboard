@@ -259,7 +259,7 @@ export const Dashboard = () => {
         </div>
 
         {/* Low Stock */}
-        <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl border border-amber-200 bg-amber-50/20 dark:bg-amber-900/20 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl border border-amber-200 bg-amber-50 dark:bg-amber-900 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-xs font-semibold text-amber-700 dark:text-white uppercase tracking-wider">
               Low Stock
@@ -274,7 +274,7 @@ export const Dashboard = () => {
         </div>
 
         {/* Out of Stock */}
-        <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl border border-rose-200 bg-rose-50/20 dark:bg-rose-900/20 shadow-sm flex items-center justify-between">
+        <div className="bg-white dark:bg-slate-800 p-4 sm:p-6 rounded-2xl border border-rose-200 bg-rose-50 dark:bg-rose-900 shadow-sm flex items-center justify-between">
           <div>
             <p className="text-xs font-semibold text-rose-700 dark:text-white uppercase tracking-wider">
               Out of Stock
@@ -301,7 +301,7 @@ export const Dashboard = () => {
           </div>
 
           <div className="space-y-3">
-            <div className="flex items-center justify-between p-3 rounded-xl bg-emerald-50/60 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800">
+            <div className="flex items-center justify-between p-3 rounded-xl bg-emerald-50 dark:bg-emerald-900 border border-emerald-100 dark:border-emerald-800">
               <div className="flex items-center gap-2.5">
                 <TrendingUp className="w-4 h-4 text-emerald-600 dark:text-white" />
                 <span className="text-sm font-semibold text-slate-700 dark:text-white">Stock Added</span>
@@ -321,7 +321,7 @@ export const Dashboard = () => {
               </span>
             </div>
 
-            <div className="flex items-center justify-between p-3 rounded-xl bg-blue-50/60 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800">
+            <div className="flex items-center justify-between p-3 rounded-xl bg-blue-50 dark:bg-blue-900 border border-blue-100 dark:border-blue-800">
               <div className="flex items-center gap-2.5">
                 <ArrowLeftRight className="w-4 h-4 text-blue-600 dark:text-white" />
                 <span className="text-sm font-semibold text-slate-700 dark:text-white">Transferred</span>
@@ -331,7 +331,7 @@ export const Dashboard = () => {
               </span>
             </div>
 
-            <div className="flex items-center justify-between p-3 rounded-xl bg-purple-50/60 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800">
+            <div className="flex items-center justify-between p-3 rounded-xl bg-purple-50 dark:bg-purple-900 border border-purple-100 dark:border-purple-800">
               <div className="flex items-center gap-2.5">
                 <RotateCcw className="w-4 h-4 text-purple-600 dark:text-white" />
                 <span className="text-sm font-semibold text-slate-700 dark:text-white">Returns Handled</span>

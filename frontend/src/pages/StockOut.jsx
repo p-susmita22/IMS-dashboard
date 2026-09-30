@@ -216,7 +216,7 @@ export const StockOut = () => {
               className={`p-4 rounded-2xl border transition-all ${
                 isInsufficient
                   ? 'bg-rose-50 dark:bg-rose-900/50 border-rose-200 text-rose-900 dark:text-white'
-                  : 'bg-emerald-50/70 dark:bg-emerald-900/30 border-emerald-200 text-emerald-900 dark:text-white'
+                  : 'bg-emerald-50 dark:bg-emerald-900 border-emerald-200 text-emerald-900 dark:text-white'
               }`}
             >
               <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider mb-2">
