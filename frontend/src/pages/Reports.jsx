@@ -122,7 +122,7 @@ export const Reports = () => {
             size="md"
             icon={FileSpreadsheet}
             loading={exporting}
-            className="border-emerald-300 text-emerald-800 dark:text-white hover:bg-emerald-50"
+            className="border-emerald-300 text-emerald-800 dark:text-white hover:bg-emerald-50 dark:bg-emerald-900/50"
           >
             Export Excel
           </Button>
@@ -132,7 +132,7 @@ export const Reports = () => {
             size="md"
             icon={FileText}
             loading={exporting}
-            className="border-rose-300 text-rose-800 dark:text-white hover:bg-rose-50"
+            className="border-rose-300 text-rose-800 dark:text-white hover:bg-rose-50 dark:bg-rose-900/50"
           >
             Export PDF
           </Button>
@@ -261,7 +261,7 @@ export const Reports = () => {
               ]}
             >
               {data.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50">
                   <td className="px-5 py-3.5 font-bold text-slate-900 dark:text-white text-xs">{row.productName}</td>
                   <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-white ">{row.category}</td>
                   <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-white text-xs">{row.sku}</td>
@@ -275,10 +275,10 @@ export const Reports = () => {
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                         row.status === 'OUT_OF_STOCK'
-                          ? 'bg-rose-100 text-rose-800 dark:text-white'
+                          ? 'bg-rose-100 dark:bg-rose-900/50 text-rose-800 dark:text-white'
                           : row.status === 'LOW_STOCK'
-                          ? 'bg-amber-100 text-amber-800 dark:text-white'
-                          : 'bg-emerald-100 text-emerald-800 dark:text-white'
+                          ? 'bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-white'
+                          : 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white'
                       }`}
                     >
                       {row.status}
@@ -305,7 +305,7 @@ export const Reports = () => {
               ]}
             >
               {data.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50">
                   <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-white  whitespace-nowrap">{row.date}</td>
                   <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">{row.orderNumber}</td>
                   <td className="px-5 py-3.5 text-xs font-bold text-slate-800 dark:text-white">{row.customerName}</td>
@@ -336,7 +336,7 @@ export const Reports = () => {
               ]}
             >
               {data.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50">
                   <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-white  whitespace-nowrap">{row.date}</td>
                   <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">{row.productName}</td>
                   <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-white text-xs">{row.sku}</td>
@@ -367,7 +367,7 @@ export const Reports = () => {
               ]}
             >
               {data.map((row, idx) => (
-                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50">
                   <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-white  whitespace-nowrap">{row.date}</td>
                   <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">{row.productName}</td>
                   <td className="px-5 py-3.5 font-mono font-bold text-slate-700 dark:text-white text-xs">{row.sku}</td>
@@ -376,14 +376,14 @@ export const Reports = () => {
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                         row.movementType === 'STOCK_IN'
-                          ? 'bg-emerald-100 text-emerald-800 dark:text-white'
+                          ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white'
                           : row.movementType === 'STOCK_OUT'
-                          ? 'bg-rose-100 text-rose-800 dark:text-white'
+                          ? 'bg-rose-100 dark:bg-rose-900/50 text-rose-800 dark:text-white'
                           : row.movementType?.includes('TRANSFER')
-                          ? 'bg-blue-100 text-blue-800 dark:text-white'
+                          ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-white'
                           : row.movementType?.includes('RETURN')
-                          ? 'bg-purple-100 text-purple-800 dark:text-white'
-                          : 'bg-amber-100 text-amber-800 dark:text-white'
+                          ? 'bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-white'
+                          : 'bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-white'
                       }`}
                     >
                       {row.movementType}

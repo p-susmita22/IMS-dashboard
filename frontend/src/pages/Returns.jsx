@@ -158,7 +158,7 @@ export const Returns = () => {
           ]}
         >
           {returns.map((r) => (
-            <tr key={r._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
+            <tr key={r._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
               <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                 {r.returnNumber}
               </td>
@@ -184,11 +184,11 @@ export const Returns = () => {
               </td>
               <td className="px-5 py-3.5">
                 {r.condition === 'GOOD' ? (
-                  <span className="bg-emerald-100 text-emerald-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                  <span className="bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
                     GOOD (Restocked)
                   </span>
                 ) : (
-                  <span className="bg-rose-100 text-rose-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                  <span className="bg-rose-100 dark:bg-rose-900/50 text-rose-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
                     DAMAGED (Quarantined)
                   </span>
                 )}

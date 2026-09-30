@@ -143,7 +143,7 @@ export const TrashBin = () => {
             headers={['Item Type', 'Name / ID', 'Deleted At', 'Actions']}
           >
             {items.map((item) => (
-              <tr key={item._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+              <tr key={item._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50">
                 <td className="px-5 py-3.5">
                   <span className="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-white font-semibold rounded text-xs uppercase tracking-wider">
                     {item.trashType}
@@ -190,7 +190,7 @@ export const TrashBin = () => {
           maxWidth="max-w-md"
         >
           <div className="space-y-4">
-            <div className="flex items-center gap-3 text-rose-600 dark:text-white bg-rose-50 p-4 rounded-xl border border-rose-100">
+            <div className="flex items-center gap-3 text-rose-600 dark:text-white bg-rose-50 dark:bg-rose-900/50 p-4 rounded-xl border border-rose-100">
               <AlertTriangle className="w-6 h-6 shrink-0" />
               <p className="text-sm font-semibold">
                 This action cannot be undone. This {itemToDelete.trashType} will be permanently removed from the system.

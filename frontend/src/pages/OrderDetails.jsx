@@ -248,7 +248,7 @@ export const OrderDetails = () => {
         </h3>
 
         {order.orderStatus === 'CANCELLED' ? (
-          <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 flex items-center gap-3 text-rose-900 dark:text-white">
+          <div className="p-4 rounded-2xl bg-rose-50 dark:bg-rose-900/50 border border-rose-200 flex items-center gap-3 text-rose-900 dark:text-white">
             <XCircle className="w-6 h-6 text-rose-600 dark:text-white shrink-0" />
             <div>
               <h4 className="font-bold text-sm">Order Cancelled</h4>
@@ -327,12 +327,12 @@ export const OrderDetails = () => {
           </p>
           <div className="pt-2 flex flex-wrap gap-2 text-xs">
             {order.isReserved && (
-              <span className="bg-purple-100 text-purple-800 dark:text-white font-bold px-2.5 py-1 rounded-lg">
+              <span className="bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-white font-bold px-2.5 py-1 rounded-lg">
                 ● Stock Reserved
               </span>
             )}
             {order.isStockDeducted && (
-              <span className="bg-emerald-100 text-emerald-800 dark:text-white font-bold px-2.5 py-1 rounded-lg">
+              <span className="bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white font-bold px-2.5 py-1 rounded-lg">
                 ✓ Physical Stock Deducted
               </span>
             )}
@@ -363,7 +363,7 @@ export const OrderDetails = () => {
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-700 font-medium">
               {order.items?.map((it, idx) => (
-                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50">
+                <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-700/50">
                   <td className="p-4 font-bold text-slate-900 dark:text-white">{it.productName}</td>
                   <td className="p-4 font-mono font-bold text-slate-700 dark:text-white">{it.sku}</td>
                   <td className="p-4 text-slate-600 dark:text-white ">{it.colour} / {it.size}</td>

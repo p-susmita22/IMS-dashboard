@@ -157,7 +157,7 @@ export const Vendors = () => {
                   <h3 className="text-base font-bold text-slate-900 dark:text-white leading-tight">
                     {v.name}
                   </h3>
-                  <span className="bg-emerald-100 text-emerald-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                  <span className="bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
                     {v.status}
                   </span>
                 </div>

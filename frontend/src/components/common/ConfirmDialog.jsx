@@ -17,7 +17,7 @@ export const ConfirmDialog = ({
   return (
     <Modal isOpen={isOpen} onClose={onClose} maxWidth="max-w-md" showClose={false}>
       <div className="flex items-start gap-4">
-        <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 dark:text-white flex items-center justify-center shrink-0">
+        <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-white flex items-center justify-center shrink-0">
           <AlertTriangle className="w-5 h-5" />
         </div>
         <div className="flex-1">

@@ -146,7 +146,7 @@ export const Locations = () => {
                       </span>
                     </div>
                     <div className="flex flex-col gap-1 items-end">
-                      <span className="bg-emerald-100 text-emerald-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                      <span className="bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
                         {loc.status}
                       </span>
                       <button
@@ -185,7 +185,7 @@ export const Locations = () => {
                       {sum.totalStock}
                     </strong>
                   </div>
-                  <div className="bg-purple-50/60 p-2.5 rounded-xl">
+                  <div className="bg-purple-50 dark:bg-purple-900/50/60 p-2.5 rounded-xl">
                     <span className="text-[10px] uppercase tracking-wider text-purple-700 dark:text-white block font-semibold">
                       Reserved
                     </span>
@@ -193,7 +193,7 @@ export const Locations = () => {
                       {sum.reservedStock}
                     </strong>
                   </div>
-                  <div className="bg-emerald-50/60 p-2.5 rounded-xl">
+                  <div className="bg-emerald-50 dark:bg-emerald-900/50/60 p-2.5 rounded-xl">
                     <span className="text-[10px] uppercase tracking-wider text-emerald-700 dark:text-white block font-semibold">
                       Available
                     </span>

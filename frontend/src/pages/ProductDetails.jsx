@@ -226,7 +226,7 @@ export const ProductDetails = () => {
               </div>
 
               {/* Stock Metric Highlights */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 /50 p-3 rounded-xl border border-slate-100 dark:border-slate-700 text-center">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-100 dark:border-slate-700 text-center">
                 <div>
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-white ">
                     Physical Stock
@@ -360,14 +360,14 @@ export const ProductDetails = () => {
                           <span
                             className={`font-bold px-2 py-0.5 rounded text-[10px] ${
                               m.movementType === 'STOCK_IN'
-                                ? 'bg-emerald-100 text-emerald-800 dark:text-white'
+                                ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white'
                                 : m.movementType === 'STOCK_OUT'
-                                ? 'bg-rose-100 text-rose-800 dark:text-white'
+                                ? 'bg-rose-100 dark:bg-rose-900/50 text-rose-800 dark:text-white'
                                 : m.movementType.includes('TRANSFER')
-                                ? 'bg-blue-100 text-blue-800 dark:text-white'
+                                ? 'bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-white'
                                 : m.movementType.includes('RETURN')
-                                ? 'bg-purple-100 text-purple-800 dark:text-white'
-                                : 'bg-amber-100 text-amber-800 dark:text-white'
+                                ? 'bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-white'
+                                : 'bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-white'
                             }`}
                           >
                             {m.movementType}

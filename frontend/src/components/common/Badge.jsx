@@ -3,12 +3,12 @@ import React from 'react';
 export const Badge = ({ children, variant = 'neutral', size = 'md', className = '' }) => {
   const variants = {
     neutral: 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-white border-slate-200 dark:border-slate-700',
-    success: 'bg-emerald-50 text-emerald-700 dark:text-white border-emerald-200',
-    warning: 'bg-amber-50 text-amber-700 dark:text-white border-amber-200',
-    danger: 'bg-rose-50 text-rose-700 dark:text-white border-rose-200',
-    info: 'bg-blue-50 text-blue-700 dark:text-white border-blue-200',
-    purple: 'bg-purple-50 text-purple-700 dark:text-white border-purple-200',
-    indigo: 'bg-indigo-50 text-indigo-700 dark:text-white border-indigo-200'
+    success: 'bg-emerald-50 dark:bg-emerald-900/50 text-emerald-700 dark:text-white border-emerald-200',
+    warning: 'bg-amber-50 dark:bg-amber-900/50 text-amber-700 dark:text-white border-amber-200',
+    danger: 'bg-rose-50 dark:bg-rose-900/50 text-rose-700 dark:text-white border-rose-200',
+    info: 'bg-blue-50 dark:bg-blue-900/50 text-blue-700 dark:text-white border-blue-200',
+    purple: 'bg-purple-50 dark:bg-purple-900/50 text-purple-700 dark:text-white border-purple-200',
+    indigo: 'bg-indigo-50 dark:bg-indigo-900/50 text-indigo-700 dark:text-white border-indigo-200'
   };
 
   const sizes = {

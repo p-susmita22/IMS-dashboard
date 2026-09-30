@@ -157,7 +157,7 @@ export const Transfers = () => {
           ]}
         >
           {transfers.map((t) => (
-            <tr key={t._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
+            <tr key={t._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
               <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                 {t.transferNumber}
               </td>
@@ -182,7 +182,7 @@ export const Transfers = () => {
                 {t.quantity} units
               </td>
               <td className="px-5 py-3.5">
-                <span className="bg-emerald-100 text-emerald-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                <span className="bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
                   {t.status}
                 </span>
               </td>

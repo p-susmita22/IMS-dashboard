@@ -162,7 +162,7 @@ export const Orders = () => {
             ]}
           >
             {orders.map((o) => (
-              <tr key={o._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
+              <tr key={o._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
                 <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                   {o.orderNumber}
                 </td>
@@ -188,11 +188,11 @@ export const Orders = () => {
                 </td>
                 <td className="px-5 py-3.5 text-xs">
                   {o.isReserved ? (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-800 dark:text-white">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-white">
                       ● Stock Reserved
                     </span>
                   ) : o.isStockDeducted ? (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:text-white">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white">
                       ✓ Stock Dispatched
                     </span>
                   ) : (
@@ -277,12 +277,12 @@ export const Orders = () => {
                   {new Date(o.createdAt).toLocaleDateString()}
                 </span>
                 {o.isReserved && (
-                  <span className="font-bold text-purple-700 dark:text-white bg-purple-50 px-2 py-0.5 rounded-md">
+                  <span className="font-bold text-purple-700 dark:text-white bg-purple-50 dark:bg-purple-900/50 px-2 py-0.5 rounded-md">
                     Stock Reserved
                   </span>
                 )}
                 {o.isStockDeducted && (
-                  <span className="font-bold text-emerald-700 dark:text-white bg-emerald-50 px-2 py-0.5 rounded-md">
+                  <span className="font-bold text-emerald-700 dark:text-white bg-emerald-50 dark:bg-emerald-900/50 px-2 py-0.5 rounded-md">
                     Stock Dispatched
                   </span>
                 )}

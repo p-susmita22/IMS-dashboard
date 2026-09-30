@@ -159,7 +159,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
             <button
               onClick={handleLogout}
               title="Logout"
-              className="p-1.5 rounded-lg text-slate-400 dark:text-white dark:text-white hover:text-rose-500 dark:text-white hover:bg-rose-50 dark:hover: dark:text-white dark:hover:bg-slate-800 transition-colors shrink-0"
+              className="p-1.5 rounded-lg text-slate-400 dark:text-white dark:text-white hover:text-rose-500 dark:text-white hover:bg-rose-50 dark:bg-rose-900/50 dark:hover: dark:text-white dark:hover:bg-slate-800 transition-colors shrink-0"
             >
               <LogOut className="w-4 h-4" />
             </button>

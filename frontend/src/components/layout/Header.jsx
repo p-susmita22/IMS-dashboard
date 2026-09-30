@@ -14,7 +14,7 @@ export const Header = ({ onOpenSidebar, isSidebarOpen }) => {
         {!isSidebarOpen && (
           <button
             onClick={onOpenSidebar}
-            className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-600 dark:text-white  hover:bg-emerald-50 hover:text-emerald-600 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-emerald-200 transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+            className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-600 dark:text-white  hover:bg-emerald-50 dark:bg-emerald-900/50 hover:text-emerald-600 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-emerald-200 transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
             title="Toggle Menu"
           >
             <Menu className="w-6 h-6" />

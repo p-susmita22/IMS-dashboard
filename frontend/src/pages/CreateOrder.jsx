@@ -289,7 +289,7 @@ export const CreateOrder = () => {
                         <button
                           type="button"
                           onClick={() => handleRemoveItem(idx)}
-                          className="p-2 text-rose-500 dark:text-white hover:bg-rose-50 rounded-lg transition-colors"
+                          className="p-2 text-rose-500 dark:text-white hover:bg-rose-50 dark:bg-rose-900/50 rounded-lg transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -301,7 +301,7 @@ export const CreateOrder = () => {
             </div>
 
             {/* Total Calculation Display */}
-            <div className="mt-4 p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100 flex items-center justify-between">
+            <div className="mt-4 p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-900/50/50 border border-indigo-100 flex items-center justify-between">
               <span className="text-sm font-bold text-slate-700 dark:text-white">Total Order Amount:</span>
               <span className="text-xl font-black text-indigo-950 dark:text-white">
                 ₹{totalOrderAmount.toLocaleString()}

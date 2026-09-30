@@ -129,7 +129,7 @@ export const Users = () => {
           ]}
         >
           {users.map((u) => (
-            <tr key={u._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
+            <tr key={u._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
               <td className="px-5 py-3.5">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-700 font-bold text-xs flex items-center justify-center text-slate-700 dark:text-white uppercase">
@@ -143,7 +143,7 @@ export const Users = () => {
                 <span
                   className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                     u.role === 'ADMIN'
-                      ? 'bg-purple-100 text-purple-800 dark:text-white'
+                      ? 'bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-white'
                       : 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-white'
                   }`}
                 >
@@ -154,8 +154,8 @@ export const Users = () => {
                 <span
                   className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                     u.status === 'ACTIVE'
-                      ? 'bg-emerald-100 text-emerald-800 dark:text-white'
-                      : 'bg-rose-100 text-rose-800 dark:text-white'
+                      ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white'
+                      : 'bg-rose-100 dark:bg-rose-900/50 text-rose-800 dark:text-white'
                   }`}
                 >
                   {u.status}

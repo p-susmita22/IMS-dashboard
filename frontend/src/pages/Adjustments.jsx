@@ -214,7 +214,7 @@ export const Adjustments = () => {
           ]}
         >
           {adjustments.map((a) => (
-            <tr key={a._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
+            <tr key={a._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
               <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                 {a.adjustmentNumber}
               </td>
@@ -250,10 +250,10 @@ export const Adjustments = () => {
                 <span
                   className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                     a.status === 'APPROVED'
-                      ? 'bg-emerald-100 text-emerald-800 dark:text-white'
+                      ? 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-white'
                       : a.status === 'REJECTED'
-                      ? 'bg-rose-100 text-rose-800 dark:text-white'
-                      : 'bg-amber-100 text-amber-800 dark:text-white'
+                      ? 'bg-rose-100 dark:bg-rose-900/50 text-rose-800 dark:text-white'
+                      : 'bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-white'
                   }`}
                 >
                   {a.status}

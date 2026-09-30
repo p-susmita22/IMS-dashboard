@@ -355,7 +355,7 @@ export const Products = () => {
             ]}
           >
             {variantRows.map(({ product, variant }) => (
-              <tr key={variant._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 /50 transition-colors">
+              <tr key={variant._id} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
                 <td className="px-5 py-3.5">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-700 overflow-hidden border border-slate-200 dark:border-slate-700 shrink-0 flex items-center justify-center">
@@ -699,7 +699,7 @@ export const Products = () => {
                         placeholder="0"
                         value={v.initialStock}
                         onChange={(e) => handleVariantChange(idx, 'initialStock', e.target.value)}
-                        className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-emerald-50/50 focus:bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                        className="w-full p-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-emerald-50 dark:bg-emerald-900/50/50 focus:bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                       />
                     </div>
                   </div>
