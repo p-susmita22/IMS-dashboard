@@ -169,10 +169,10 @@ export const Adjustments = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-            <SlidersHorizontal className="w-7 h-7 text-amber-600 dark:text-amber-400" />
+            <SlidersHorizontal className="w-7 h-7 text-amber-600 dark:text-white" />
             Stock Adjustments
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400  mt-0.5">
+          <p className="text-sm text-slate-500 dark:text-white  mt-0.5">
             Physical inventory count reconciliations with audit reason tracking and manager approval.
           </p>
         </div>
@@ -218,16 +218,16 @@ export const Adjustments = () => {
               <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                 {a.adjustmentNumber}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  whitespace-nowrap">
+              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-white  whitespace-nowrap">
                 {new Date(a.createdAt).toLocaleDateString()}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">
+              <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-white ">
                 {a.locationId?.name}
               </td>
-              <td className="px-5 py-3.5 font-mono font-bold text-slate-800 dark:text-slate-200 text-xs">
+              <td className="px-5 py-3.5 font-mono font-bold text-slate-800 dark:text-white text-xs">
                 {a.variantId?.sku}
               </td>
-              <td className="px-5 py-3.5 text-xs font-semibold text-slate-500 dark:text-slate-400 ">
+              <td className="px-5 py-3.5 text-xs font-semibold text-slate-500 dark:text-white ">
                 {a.systemStock}
               </td>
               <td className="px-5 py-3.5 text-xs font-extrabold text-slate-900 dark:text-white">
@@ -235,31 +235,31 @@ export const Adjustments = () => {
               </td>
               <td className="px-5 py-3.5 text-xs font-black">
                 {a.difference > 0 ? (
-                  <span className="text-emerald-600 dark:text-emerald-400">+{a.difference}</span>
+                  <span className="text-emerald-600 dark:text-white">+{a.difference}</span>
                 ) : a.difference < 0 ? (
-                  <span className="text-rose-600 dark:text-rose-400">{a.difference}</span>
+                  <span className="text-rose-600 dark:text-white">{a.difference}</span>
                 ) : (
-                  <span className="text-slate-400 dark:text-slate-500 dark:text-slate-400">0</span>
+                  <span className="text-slate-400 dark:text-white dark:text-white">0</span>
                 )}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-700 dark:text-slate-300">
+              <td className="px-5 py-3.5 text-xs text-slate-700 dark:text-white">
                 <span className="font-semibold">{a.reason}</span>
-                {a.notes && <span className="block text-[11px] text-slate-400 dark:text-slate-500 dark:text-slate-400">{a.notes}</span>}
+                {a.notes && <span className="block text-[11px] text-slate-400 dark:text-white dark:text-white">{a.notes}</span>}
               </td>
               <td className="px-5 py-3.5">
                 <span
                   className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                     a.status === 'APPROVED'
-                      ? 'bg-emerald-100 text-emerald-800 dark:text-emerald-300'
+                      ? 'bg-emerald-100 text-emerald-800 dark:text-white'
                       : a.status === 'REJECTED'
-                      ? 'bg-rose-100 text-rose-800 dark:text-rose-300'
-                      : 'bg-amber-100 text-amber-800 dark:text-amber-300'
+                      ? 'bg-rose-100 text-rose-800 dark:text-white'
+                      : 'bg-amber-100 text-amber-800 dark:text-white'
                   }`}
                 >
                   {a.status}
                 </span>
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400 ">
+              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-white ">
                 {a.requestedBy?.name || 'Staff'}
               </td>
               <td className="px-5 py-3.5">
@@ -275,13 +275,13 @@ export const Adjustments = () => {
                     <button
                       onClick={() => handleReject(a._id)}
                       disabled={actionLoading[a._id]}
-                      className="px-2 py-1 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 text-slate-600 dark:text-slate-400  transition-colors"
+                      className="px-2 py-1 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 text-slate-600 dark:text-white  transition-colors"
                     >
                       Reject
                     </button>
                   </div>
                 ) : (
-                  <span className="text-xs text-slate-400 dark:text-slate-500 dark:text-slate-400">—</span>
+                  <span className="text-xs text-slate-400 dark:text-white dark:text-white">—</span>
                 )}
               </td>
             </tr>
@@ -336,13 +336,13 @@ export const Adjustments = () => {
           <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 space-y-3">
             <div className="grid grid-cols-3 gap-3 text-center">
               <div>
-                <span className="text-[11px] font-semibold uppercase text-slate-400 dark:text-slate-500 dark:text-slate-400 block">
+                <span className="text-[11px] font-semibold uppercase text-slate-400 dark:text-white dark:text-white block">
                   System Stock
                 </span>
-                <strong className="text-lg font-bold text-slate-700 dark:text-slate-300">{systemStock}</strong>
+                <strong className="text-lg font-bold text-slate-700 dark:text-white">{systemStock}</strong>
               </div>
               <div>
-                <span className="text-[11px] font-semibold uppercase text-slate-400 dark:text-slate-500 dark:text-slate-400 block">
+                <span className="text-[11px] font-semibold uppercase text-slate-400 dark:text-white dark:text-white block">
                   Physical Count
                 </span>
                 <input
@@ -356,16 +356,16 @@ export const Adjustments = () => {
                 />
               </div>
               <div>
-                <span className="text-[11px] font-semibold uppercase text-slate-400 dark:text-slate-500 dark:text-slate-400 block">
+                <span className="text-[11px] font-semibold uppercase text-slate-400 dark:text-white dark:text-white block">
                   Difference
                 </span>
                 <strong
                   className={`text-lg font-black ${
                     difference > 0
-                      ? 'text-emerald-600 dark:text-emerald-400'
+                      ? 'text-emerald-600 dark:text-white'
                       : difference < 0
-                      ? 'text-rose-600 dark:text-rose-400'
-                      : 'text-slate-500 dark:text-slate-400 '
+                      ? 'text-rose-600 dark:text-white'
+                      : 'text-slate-500 dark:text-white '
                   }`}
                 >
                   {difference > 0 ? `+${difference}` : difference}
@@ -401,9 +401,9 @@ export const Adjustments = () => {
                 id="autoApprove"
                 checked={autoApprove}
                 onChange={(e) => setAutoApprove(e.target.checked)}
-                className="w-4 h-4 rounded text-emerald-600 dark:text-emerald-400 focus:ring-emerald-500 border-slate-300 dark:border-slate-600"
+                className="w-4 h-4 rounded text-emerald-600 dark:text-white focus:ring-emerald-500 border-slate-300 dark:border-slate-600"
               />
-              <label htmlFor="autoApprove" className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+              <label htmlFor="autoApprove" className="text-xs font-semibold text-slate-700 dark:text-white">
                 Immediately approve and apply adjustment (Manager / Admin override)
               </label>
             </div>

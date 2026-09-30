@@ -114,10 +114,10 @@ export const Transfers = () => {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-            <ArrowLeftRight className="w-7 h-7 text-blue-600 dark:text-blue-400" />
+            <ArrowLeftRight className="w-7 h-7 text-blue-600 dark:text-white" />
             Stock Transfers
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400  mt-0.5">
+          <p className="text-sm text-slate-500 dark:text-white  mt-0.5">
             Inter-warehouse stock movements. Validates source stock and logs dual audit records.
           </p>
         </div>
@@ -161,20 +161,20 @@ export const Transfers = () => {
               <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                 {t.transferNumber}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  whitespace-nowrap">
+              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-white  whitespace-nowrap">
                 {new Date(t.createdAt).toLocaleDateString()}
               </td>
-              <td className="px-5 py-3.5 text-xs font-semibold text-rose-700 dark:text-rose-400">
+              <td className="px-5 py-3.5 text-xs font-semibold text-rose-700 dark:text-white">
                 {t.fromLocationId?.name}
               </td>
-              <td className="px-5 py-3.5 text-xs font-semibold text-emerald-700 dark:text-emerald-400">
+              <td className="px-5 py-3.5 text-xs font-semibold text-emerald-700 dark:text-white">
                 {t.toLocationId?.name}
               </td>
               <td className="px-5 py-3.5">
                 <span className="text-xs font-bold text-slate-900 dark:text-white block">
                   {t.variantId?.productId?.name || 'Product'}
                 </span>
-                <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400  font-bold">
+                <span className="text-[11px] font-mono text-slate-500 dark:text-white  font-bold">
                   {t.variantId?.sku} ({t.variantId?.colour}/{t.variantId?.size})
                 </span>
               </td>
@@ -182,14 +182,14 @@ export const Transfers = () => {
                 {t.quantity} units
               </td>
               <td className="px-5 py-3.5">
-                <span className="bg-emerald-100 text-emerald-800 dark:text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded">
+                <span className="bg-emerald-100 text-emerald-800 dark:text-white text-[10px] font-bold px-2 py-0.5 rounded">
                   {t.status}
                 </span>
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400 ">
+              <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-white ">
                 {t.performedBy?.name || 'System'}
               </td>
-              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  max-w-xs truncate">
+              <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-white  max-w-xs truncate">
                 {t.notes || '-'}
               </td>
             </tr>

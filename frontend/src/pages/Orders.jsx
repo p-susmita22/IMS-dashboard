@@ -88,7 +88,7 @@ export const Orders = () => {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Wholesale Orders
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400  mt-0.5">
+          <p className="text-sm text-slate-500 dark:text-white  mt-0.5">
             Track status progression, inventory reservation, and dispatch delivery.
           </p>
         </div>
@@ -111,7 +111,7 @@ export const Orders = () => {
             className={`px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
               statusFilter === st
                 ? 'bg-slate-900 text-white shadow-sm'
-                : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700'
+                : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-white  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700'
             }`}
           >
             {st}
@@ -166,21 +166,21 @@ export const Orders = () => {
                 <td className="px-5 py-3.5 font-mono font-bold text-slate-900 dark:text-white text-xs">
                   {o.orderNumber}
                 </td>
-                <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-slate-400  whitespace-nowrap">
+                <td className="px-5 py-3.5 text-xs text-slate-500 dark:text-white  whitespace-nowrap">
                   {new Date(o.createdAt).toLocaleDateString()}
                 </td>
                 <td className="px-5 py-3.5">
-                  <span className="font-bold text-slate-800 dark:text-slate-200 block text-xs">
+                  <span className="font-bold text-slate-800 dark:text-white block text-xs">
                     {o.customerName}
                   </span>
-                  <span className="text-[11px] text-slate-400 dark:text-slate-500 dark:text-slate-400 font-mono">
+                  <span className="text-[11px] text-slate-400 dark:text-white dark:text-white font-mono">
                     {o.phoneNumber}
                   </span>
                 </td>
-                <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-slate-400  font-medium">
+                <td className="px-5 py-3.5 text-xs text-slate-600 dark:text-white  font-medium">
                   {o.locationId?.name || 'N/A'}
                 </td>
-                <td className="px-5 py-3.5 text-xs text-slate-700 dark:text-slate-300 font-semibold">
+                <td className="px-5 py-3.5 text-xs text-slate-700 dark:text-white font-semibold">
                   {o.items?.length || 0} product(s)
                 </td>
                 <td className="px-5 py-3.5 text-sm font-extrabold text-slate-900 dark:text-white">
@@ -188,15 +188,15 @@ export const Orders = () => {
                 </td>
                 <td className="px-5 py-3.5 text-xs">
                   {o.isReserved ? (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-800 dark:text-purple-300">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-800 dark:text-white">
                       ● Stock Reserved
                     </span>
                   ) : o.isStockDeducted ? (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:text-emerald-300">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800 dark:text-white">
                       ✓ Stock Dispatched
                     </span>
                   ) : (
-                    <span className="text-slate-400 dark:text-slate-500 dark:text-slate-400 text-[11px]">Unreserved</span>
+                    <span className="text-slate-400 dark:text-white dark:text-white text-[11px]">Unreserved</span>
                   )}
                 </td>
                 <td className="px-5 py-3.5">
@@ -256,9 +256,9 @@ export const Orders = () => {
 
               <div className="flex items-start justify-between gap-2 text-xs">
                 <div>
-                  <h4 className="font-bold text-slate-800 dark:text-slate-200 text-sm">{o.customerName}</h4>
-                  <p className="text-slate-500 dark:text-slate-400  font-mono text-[11px]">{o.phoneNumber}</p>
-                  <p className="text-slate-400 dark:text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
+                  <h4 className="font-bold text-slate-800 dark:text-white text-sm">{o.customerName}</h4>
+                  <p className="text-slate-500 dark:text-white  font-mono text-[11px]">{o.phoneNumber}</p>
+                  <p className="text-slate-400 dark:text-white dark:text-white mt-1 flex items-center gap-1">
                     <Building2 className="w-3 h-3" /> {o.locationId?.name}
                   </p>
                 </div>
@@ -266,23 +266,23 @@ export const Orders = () => {
                   <span className="text-sm font-extrabold text-slate-900 dark:text-white block">
                     ₹{o.totalAmount.toLocaleString()}
                   </span>
-                  <span className="text-[11px] text-slate-500 dark:text-slate-400  font-medium">
+                  <span className="text-[11px] text-slate-500 dark:text-white  font-medium">
                     {o.items?.length || 0} items
                   </span>
                 </div>
               </div>
 
               <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-[11px]">
-                <span className="text-slate-400 dark:text-slate-500 dark:text-slate-400">
+                <span className="text-slate-400 dark:text-white dark:text-white">
                   {new Date(o.createdAt).toLocaleDateString()}
                 </span>
                 {o.isReserved && (
-                  <span className="font-bold text-purple-700 dark:text-purple-400 bg-purple-50 px-2 py-0.5 rounded-md">
+                  <span className="font-bold text-purple-700 dark:text-white bg-purple-50 px-2 py-0.5 rounded-md">
                     Stock Reserved
                   </span>
                 )}
                 {o.isStockDeducted && (
-                  <span className="font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 px-2 py-0.5 rounded-md">
+                  <span className="font-bold text-emerald-700 dark:text-white bg-emerald-50 px-2 py-0.5 rounded-md">
                     Stock Dispatched
                   </span>
                 )}

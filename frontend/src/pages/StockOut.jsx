@@ -144,7 +144,7 @@ export const StockOut = () => {
       <div className="flex items-center gap-3">
         <button
           onClick={() => navigate(-1)}
-          className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
+          className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-white  hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
         </button>
@@ -153,7 +153,7 @@ export const StockOut = () => {
             <MinusCircle className="w-7 h-7 text-slate-900 dark:text-white" />
             Stock Out (Sale / Dispatch)
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 ">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-white ">
             Deduct physical inventory. Negative stock is strictly prevented.
           </p>
         </div>
@@ -210,36 +210,36 @@ export const StockOut = () => {
             <div
               className={`p-4 rounded-2xl border transition-all ${
                 isInsufficient
-                  ? 'bg-rose-50 border-rose-200 text-rose-900 dark:text-rose-300'
-                  : 'bg-emerald-50/70 border-emerald-200 text-emerald-900 dark:text-emerald-300'
+                  ? 'bg-rose-50 border-rose-200 text-rose-900 dark:text-white'
+                  : 'bg-emerald-50/70 border-emerald-200 text-emerald-900 dark:text-white'
               }`}
             >
               <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider mb-2">
                 <span>Warehouse Inventory Level</span>
                 {isInsufficient ? (
-                  <span className="text-rose-600 dark:text-rose-400 font-bold flex items-center gap-1">
+                  <span className="text-rose-600 dark:text-white font-bold flex items-center gap-1">
                     <AlertCircle className="w-4 h-4" /> Insufficient Stock
                   </span>
                 ) : (
-                  <span className="text-emerald-700 dark:text-emerald-400 font-bold flex items-center gap-1">
+                  <span className="text-emerald-700 dark:text-white font-bold flex items-center gap-1">
                     <CheckCircle2 className="w-4 h-4" /> Stock Available
                   </span>
                 )}
               </div>
               <div className="grid grid-cols-3 gap-2 text-center text-xs">
                 <div className="bg-white dark:bg-slate-800/80 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <span className="text-slate-500 dark:text-slate-400  block">Total Stock</span>
+                  <span className="text-slate-500 dark:text-white  block">Total Stock</span>
                   <strong className="text-base text-slate-900 dark:text-white">{stockInfo.total}</strong>
                 </div>
                 <div className="bg-white dark:bg-slate-800/80 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <span className="text-slate-500 dark:text-slate-400  block">Reserved</span>
-                  <strong className="text-base text-indigo-600 dark:text-indigo-400">{stockInfo.reserved}</strong>
+                  <span className="text-slate-500 dark:text-white  block">Reserved</span>
+                  <strong className="text-base text-indigo-600 dark:text-white">{stockInfo.reserved}</strong>
                 </div>
                 <div className="bg-white dark:bg-slate-800/80 p-2 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <span className="text-slate-500 dark:text-slate-400  block">Available</span>
+                  <span className="text-slate-500 dark:text-white  block">Available</span>
                   <strong
                     className={`text-base font-extrabold ${
-                      isInsufficient ? 'text-rose-600 dark:text-rose-400' : 'text-emerald-600 dark:text-emerald-400'
+                      isInsufficient ? 'text-rose-600 dark:text-white' : 'text-emerald-600 dark:text-white'
                     }`}
                   >
                     {stockInfo.available}
@@ -248,7 +248,7 @@ export const StockOut = () => {
               </div>
 
               {isInsufficient && (
-                <div className="mt-3 text-xs font-bold text-rose-700 dark:text-rose-400 flex items-center gap-1.5">
+                <div className="mt-3 text-xs font-bold text-rose-700 dark:text-white flex items-center gap-1.5">
                   <AlertTriangle className="w-4 h-4 shrink-0" />
                   ❌ Insufficient available stock. Available: {stockInfo.available}, Requested: {requestedQty}
                 </div>

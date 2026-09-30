@@ -270,7 +270,7 @@ export const Products = () => {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Products & Variants
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400  mt-0.5">
+          <p className="text-sm text-slate-500 dark:text-white  mt-0.5">
             Manage catalog, automated SKUs, and cross-warehouse inventory.
           </p>
         </div>
@@ -305,7 +305,7 @@ export const Products = () => {
           <select
             value={categoryFilter}
             onChange={(e) => setCategoryFilter(e.target.value)}
-            className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300"
+            className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-medium text-slate-700 dark:text-white"
           >
             <option value="">All Categories</option>
             {categories.map((cat) => (
@@ -318,7 +318,7 @@ export const Products = () => {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300"
+            className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-medium text-slate-700 dark:text-white"
           >
             <option value="">All Stock Statuses</option>
             <option value="IN_STOCK">In Stock</option>
@@ -366,30 +366,30 @@ export const Products = () => {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <Package className="w-5 h-5 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
+                        <Package className="w-5 h-5 text-slate-400 dark:text-white dark:text-white" />
                       )}
                     </div>
                     <div>
                       <span className="font-bold text-slate-900 dark:text-white block leading-tight">
                         {product.name}
                       </span>
-                      <span className="text-xs text-slate-400 dark:text-slate-500 dark:text-slate-400">{product.category}</span>
+                      <span className="text-xs text-slate-400 dark:text-white dark:text-white">{product.category}</span>
                     </div>
                   </div>
                 </td>
-                <td className="px-5 py-3.5 font-mono font-bold text-slate-800 dark:text-slate-200 text-xs">
+                <td className="px-5 py-3.5 font-mono font-bold text-slate-800 dark:text-white text-xs">
                   {variant.sku}
                 </td>
-                <td className="px-5 py-3.5 text-xs font-semibold text-slate-600 dark:text-slate-400 ">
+                <td className="px-5 py-3.5 text-xs font-semibold text-slate-600 dark:text-white ">
                   {variant.colour} / {variant.size}
                 </td>
                 <td className="px-5 py-3.5 text-xs font-bold text-slate-900 dark:text-white">
                   ₹{variant.sellingPrice}
                 </td>
-                <td className="px-5 py-3.5 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                <td className="px-5 py-3.5 text-xs font-semibold text-slate-700 dark:text-white">
                   {variant.stock.total}
                 </td>
-                <td className="px-5 py-3.5 text-xs font-semibold text-slate-500 dark:text-slate-400 ">
+                <td className="px-5 py-3.5 text-xs font-semibold text-slate-500 dark:text-white ">
                   {variant.stock.reserved}
                 </td>
                 <td className="px-5 py-3.5 text-sm font-extrabold text-slate-900 dark:text-white">
@@ -465,7 +465,7 @@ export const Products = () => {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <Package className="w-6 h-6 text-slate-400 dark:text-slate-500 dark:text-slate-400" />
+                    <Package className="w-6 h-6 text-slate-400 dark:text-white dark:text-white" />
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -478,10 +478,10 @@ export const Products = () => {
                       minimumStock={variant.minimumStockLevel}
                     />
                   </div>
-                  <div className="text-xs text-slate-500 dark:text-slate-400  font-mono font-bold mt-0.5">
+                  <div className="text-xs text-slate-500 dark:text-white  font-mono font-bold mt-0.5">
                     {variant.sku}
                   </div>
-                  <div className="flex items-center gap-2 mt-1 text-xs text-slate-600 dark:text-slate-400 ">
+                  <div className="flex items-center gap-2 mt-1 text-xs text-slate-600 dark:text-white ">
                     <span>{variant.colour} / {variant.size}</span>
                     <span>•</span>
                     <span className="font-bold text-slate-900 dark:text-white">₹{variant.sellingPrice}</span>
@@ -491,11 +491,11 @@ export const Products = () => {
 
               <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between text-xs">
                 <div className="flex items-center gap-3">
-                  <span className="text-slate-500 dark:text-slate-400 ">Physical: <strong>{variant.stock.total}</strong></span>
-                  <span className="text-slate-500 dark:text-slate-400 ">Reserved: <strong>{variant.stock.reserved}</strong></span>
+                  <span className="text-slate-500 dark:text-white ">Physical: <strong>{variant.stock.total}</strong></span>
+                  <span className="text-slate-500 dark:text-white ">Reserved: <strong>{variant.stock.reserved}</strong></span>
                 </div>
                 <div className="font-bold text-slate-900 dark:text-white">
-                  Available: <span className="text-emerald-600 dark:text-emerald-400 font-extrabold text-sm">{variant.stock.available}</span>
+                  Available: <span className="text-emerald-600 dark:text-white font-extrabold text-sm">{variant.stock.available}</span>
                 </div>
               </div>
               
@@ -574,11 +574,11 @@ export const Products = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Default Warehouse (Optional)</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-white">Default Warehouse (Optional)</label>
               <select
                 value={formData.defaultLocation}
                 onChange={(e) => setFormData({ ...formData, defaultLocation: e.target.value })}
-                className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-white w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
               >
                 <option value="">Select Location</option>
                 {locations.map((l) => (
@@ -588,11 +588,11 @@ export const Products = () => {
             </div>
             
             <div className="flex flex-col gap-1.5">
-              <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Default Vendor (Optional)</label>
+              <label className="text-xs font-semibold text-slate-700 dark:text-white">Default Vendor (Optional)</label>
               <select
                 value={formData.defaultVendor}
                 onChange={(e) => setFormData({ ...formData, defaultVendor: e.target.value })}
-                className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-white w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
               >
                 <option value="">Select Vendor</option>
                 {vendors.map((v) => (
@@ -605,13 +605,13 @@ export const Products = () => {
           {/* Variants Section */}
           <div className="pt-3 border-t border-slate-100 dark:border-slate-700">
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-white">
                 Product Variants (SKUs will auto-generate)
               </label>
               <button
                 type="button"
                 onClick={handleAddVariantRow}
-                className="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:text-emerald-400"
+                className="text-xs font-bold text-emerald-600 dark:text-white hover:text-emerald-700 dark:text-white"
               >
                 + Add Variant
               </button>
@@ -625,8 +625,8 @@ export const Products = () => {
                 >
                   <div className="grid grid-cols-5 gap-2 items-end">
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                        Size <span className="text-rose-500 dark:text-rose-400">*</span>
+                      <label className="text-xs font-semibold text-slate-700 dark:text-white">
+                        Size <span className="text-rose-500 dark:text-white">*</span>
                       </label>
                       <input
                         type="text"
@@ -639,8 +639,8 @@ export const Products = () => {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                        Colour <span className="text-rose-500 dark:text-rose-400">*</span>
+                      <label className="text-xs font-semibold text-slate-700 dark:text-white">
+                        Colour <span className="text-rose-500 dark:text-white">*</span>
                       </label>
                       <input
                         type="text"
@@ -653,8 +653,8 @@ export const Products = () => {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                        Purchase (₹) <span className="text-rose-500 dark:text-rose-400">*</span>
+                      <label className="text-xs font-semibold text-slate-700 dark:text-white">
+                        Purchase (₹) <span className="text-rose-500 dark:text-white">*</span>
                       </label>
                       <input
                         type="number"
@@ -667,8 +667,8 @@ export const Products = () => {
                     </div>
 
                     <div className="flex flex-col gap-1">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                        Selling (₹) <span className="text-rose-500 dark:text-rose-400">*</span>
+                      <label className="text-xs font-semibold text-slate-700 dark:text-white">
+                        Selling (₹) <span className="text-rose-500 dark:text-white">*</span>
                       </label>
                       <input
                         type="number"
@@ -682,12 +682,12 @@ export const Products = () => {
 
                     <div className="flex flex-col gap-1">
                       <div className="flex items-center justify-between">
-                        <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Initial Qty</label>
+                        <label className="text-xs font-semibold text-slate-700 dark:text-white">Initial Qty</label>
                         {formData.variants.length > 1 && (
                           <button
                             type="button"
                             onClick={() => handleRemoveVariantRow(idx)}
-                            className="text-rose-500 dark:text-rose-400 hover:text-rose-700 dark:text-rose-400 font-extrabold text-sm leading-none"
+                            className="text-rose-500 dark:text-white hover:text-rose-700 dark:text-white font-extrabold text-sm leading-none"
                             title="Remove variant"
                           >
                             ×
@@ -766,11 +766,11 @@ export const Products = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Default Warehouse (Optional)</label>
+                <label className="text-xs font-semibold text-slate-700 dark:text-white">Default Warehouse (Optional)</label>
                 <select
                   value={editData.defaultLocation}
                   onChange={(e) => setEditData({ ...editData, defaultLocation: e.target.value })}
-                  className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                  className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-white w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                 >
                   <option value="">Select Location</option>
                   {locations.map((l) => (
@@ -780,11 +780,11 @@ export const Products = () => {
               </div>
               
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">Default Vendor (Optional)</label>
+                <label className="text-xs font-semibold text-slate-700 dark:text-white">Default Vendor (Optional)</label>
                 <select
                   value={editData.defaultVendor}
                   onChange={(e) => setEditData({ ...editData, defaultVendor: e.target.value })}
-                  className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-slate-300 w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
+                  className="rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-700 dark:text-white w-full focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500"
                 >
                   <option value="">Select Vendor</option>
                   {vendors.map((v) => (
@@ -796,7 +796,7 @@ export const Products = () => {
 
             {/* Variant Details */}
             <div className="pt-3 border-t border-slate-100 dark:border-slate-700">
-              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 block mb-2">
+              <label className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-white block mb-2">
                 Variant Details
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-3">

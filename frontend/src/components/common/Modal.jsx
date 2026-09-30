@@ -45,7 +45,7 @@ export const Modal = ({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="rounded-lg p-1 text-slate-400 dark:text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 hover:text-slate-600 dark:text-slate-400  transition-colors"
+                  className="rounded-lg p-1 text-slate-400 dark:text-white dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-700 hover:text-slate-600 dark:text-white  transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>

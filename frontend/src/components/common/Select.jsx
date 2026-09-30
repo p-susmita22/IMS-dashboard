@@ -18,9 +18,9 @@ export const Select = ({
       {label && (
         <label
           htmlFor={name}
-          className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5"
+          className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-white mb-1.5"
         >
-          {label} {required && <span className="text-rose-500 dark:text-rose-400">*</span>}
+          {label} {required && <span className="text-rose-500 dark:text-white">*</span>}
         </label>
       )}
       <div className="relative rounded-xl shadow-sm">
@@ -50,7 +50,7 @@ export const Select = ({
           ))}
         </select>
       </div>
-      {error && <p className="mt-1 text-xs text-rose-600 dark:text-rose-400 font-medium">{error}</p>}
+      {error && <p className="mt-1 text-xs text-rose-600 dark:text-white font-medium">{error}</p>}
     </div>
   );
 };
